@@ -3,6 +3,7 @@
 node_modules
 public
 prof
+tools
 tsconfig.tsbuildinfo
 .obsidian
 .quartz-cache
