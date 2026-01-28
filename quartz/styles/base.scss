@@ -581,19 +581,12 @@ tr {
 
 img {
   display: block;
-  width: 80%;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   object-fit: contain;
   border-radius: 5px;
   margin: 1rem auto 0.5rem;
   content-visibility: auto;
-}
-
-@media (max-width: 768px) {
-  img {
-    width: 100%;
-  }
 }
 
 p>img+em {
