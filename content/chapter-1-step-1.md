@@ -4,7 +4,7 @@ title: "Chapter 1 Step 1: New Project Wizard"
 
 [← Back to Chapter 1](chapter-1-architecture.md)
 
-<script src="/static/step-navigation.js"></script>
+<script src="./static/step-navigation.js"></script>
 
 <style>
 .step-container {

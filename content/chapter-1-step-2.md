@@ -4,7 +4,7 @@ title: "Step 2: Create an IP Integrator Design"
 
 [← Previous: Step 1](chapter-1-step-1.md)
 
-<script src="/static/step-navigation.js"></script>
+<script src="./static/step-navigation.js"></script>
 
 <style>
 .step-container {
