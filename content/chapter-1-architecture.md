@@ -27,13 +27,6 @@ The embedded system needed for the bare metal and RTOS exercises is built in thi
 
 This guide will provide a step-by-step walk-through of creating a Microblaze based hardware design using the Vivado IP Integrator for the Genesys2 FPGA board.
 
-## DESIGN I. BASIC SYSTEM
-Microblaze is a soft IP core from Xilinx that will implement a microprocessor entirely within the Xilinx FPGA general purpose memory and logic fabric. For this tutorial, we are going to add a Microblaze IP block using the Vivado IP Integrator tool.
-
-In addition to the Microblaze IP block, we would also like to make use of the DDR3 SDRAM component on the Genesys2. Therefore, a MIG (Memory Interface Generator) IP block will be added to our design.
-
-Finally, a UART (universal asynchronous receiver/transmitter) IP block will be added to communicate between the host PC and the soft processor core running on the Genesys2.
-
 ---
 
 ## General Design Flow
@@ -58,6 +51,15 @@ design information from Vivado.
 2. Program FPGA
 3. Run configuration by selecting the correct UART COM Port and Baud Rate
 
+---
+
+## Design I: Basic System
+
+Microblaze is a soft IP core from Xilinx that will implement a microprocessor entirely within the Xilinx FPGA general purpose memory and logic fabric. For this tutorial, we are going to add a Microblaze IP block using the Vivado IP Integrator tool.
+
+In addition to the Microblaze IP block, we would also like to make use of the DDR3 SDRAM component on the Genesys2. Therefore, a MIG (Memory Interface Generator) IP block will be added to our design.
+
+Finally, a UART (universal asynchronous receiver/transmitter) IP block will be added to communicate between the host PC and the soft processor core running on the Genesys2.
 
 ### Step 1: [New Project Wizard](chapter-1-step-1.md)
 
@@ -86,7 +88,8 @@ design information from Vivado.
 ### Step 13: [Program the Device](chapter-1-step-13.md)
 
 
-## DESING II: IMPROVING THE ARCHITECTURE
+## Design II: Improving the Architecture
+
 In this section we will increase the complexity of the architecture, allowing the use of timers and interrupts. The advantages are obvious: it will allow the use of real-time operating systems or systems based on periodic interrupts.
 
 ### Step 1: Adding new IPs
