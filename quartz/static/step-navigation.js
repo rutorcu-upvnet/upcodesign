@@ -1,5 +1,5 @@
 // Step Navigation Script
-document.addEventListener('DOMContentLoaded', function () {
+function initializeStepNavigation() {
     const steps = document.querySelectorAll('.step');
     let currentStep = 1;
     const totalSteps = steps.length;
@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentStepEl = document.getElementById('currentStep');
     const totalStepsEl = document.getElementById('totalSteps');
 
-    if (!prevBtn || !nextBtn) return;
+    if (!prevBtn || !nextBtn || !currentStepEl || !totalStepsEl) return;
 
+    // Update total steps display
     totalStepsEl.textContent = totalSteps;
 
     function showStep(n) {
@@ -35,16 +36,30 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    prevBtn.addEventListener('click', function () {
+    // Remove previous listeners if any
+    const newPrevBtn = prevBtn.cloneNode(true);
+    const newNextBtn = nextBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+
+    newPrevBtn.addEventListener('click', function () {
         currentStep -= 1;
         showStep(currentStep);
     });
 
-    nextBtn.addEventListener('click', function () {
+    newNextBtn.addEventListener('click', function () {
         currentStep += 1;
         showStep(currentStep);
     });
 
-    // Initialize
+    // Initialize - ensure values are set
+    currentStepEl.textContent = currentStep;
+    totalStepsEl.textContent = totalSteps;
     showStep(currentStep);
-});
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initializeStepNavigation);
+
+// Re-initialize on Quartz SPA navigation
+document.addEventListener('nav', initializeStepNavigation);
