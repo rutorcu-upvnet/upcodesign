@@ -1,5 +1,5 @@
 ---
-title: "1.11: Generating Bitstream File"
+title: "1.11 Generating Bitstream File"
 ---
 
 [← Previous: Step 10](chapter-1-step-10.md)
@@ -76,7 +76,7 @@ button:disabled {
 <div class="step active" data-step="1">
 <h2>Generate Bitstream</h2>
 
-By selecting Generate bitstream, all the synthesis process will start. This may take 5 to 20 minutes depending on your system performance.
+By selecting Generate bitstream, the entire synthesis process will be initiated. This process typically requires 5 to 20 minutes depending on your system performance.
 
 ![Generate bitstream](img/figure_0039.png)
 

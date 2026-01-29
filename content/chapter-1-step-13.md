@@ -1,5 +1,5 @@
 ---
-title: "1.13: Program the Device"
+title: "1.13 Program the Device"
 ---
 
 [← Previous: Step 12](chapter-1-step-12.md)

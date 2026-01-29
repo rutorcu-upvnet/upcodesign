@@ -104,7 +104,7 @@ Select RTL Project as the project type.
 <div class="step" data-step="4">
 <h2>Add Constraint File</h2>
 
-This example we do not add design files. We add the constrain file downloaded from [Genesys2 Digilent git page](https://github.com/Digilent/digilent-xdc).
+This example we do not add design files. We add the constraint file downloaded from [Genesys2 Digilent git page](https://github.com/Digilent/digilent-xdc).
 
 ![GitHub of Digilent's Genesys2 board](img/figure_0004.png)
 
@@ -116,9 +116,9 @@ This example we do not add design files. We add the constrain file downloaded fr
 
 Add the constraint file to your project.
 
-![Adding new constrain file](img/figure_0005.png)
+![Adding new constraint file](img/figure_0005.png)
 
-<center><em>Figure 5. Adding new constrain file.</em></center><br>
+<center><em>Figure 5. Adding new constraint file.</em></center><br>
 </div>
 
 <div class="step" data-step="6">

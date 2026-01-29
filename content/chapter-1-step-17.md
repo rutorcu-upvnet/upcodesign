@@ -1,5 +1,5 @@
 ---
-title: "1.17: Run Connection Automation"
+title: "1.17 Run Connection Automation"
 ---
 
 [← Previous: Step 16](chapter-1-step-16.md)

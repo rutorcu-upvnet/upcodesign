@@ -76,7 +76,7 @@ button:disabled {
 <div class="step active" data-step="1">
 <h2>Configure DDR3 Frequency</h2>
 
-In the Genesys2 board, the input clock frequency is 100MHz. The DDR3 can run up to 800MHz, allowing fast access to the memory and fast processing of the MicroBlaze. Modify the frequency clock to `800MHz`. This permits the MicroBlaze to run up to 800MHz/8 = 100MHz.
+In the Genesys2 board, the input clock frequency is 100MHz. The DDR3 can run up to 800MHz, enabling fast memory access and efficient processing of the MicroBlaze. Modify the frequency clock to `800MHz`. This allows the MicroBlaze to operate at frequencies up to 800MHz/8 = 100MHz.
 
 ![Change the frequency](img/figure_0037.png)
 

@@ -2,8 +2,6 @@
 title: "Firmware Development in Embedded Systems"
 ---
 
-# Firmware Development in Embedded Systems (Part 1)
-
 **Author:** Marcos Martínez Peiró (mpeiro@eln.upv.es)  
 **Date:** February 2025  
 **Institution:** Universitat Politècnica de València
@@ -17,7 +15,7 @@ title: "Firmware Development in Embedded Systems"
 - Create an IP Integrator Design
 - Run Block Automation
 - Use Connection Automation
-- Validating Design and making an HDL Wrapper
+- Validating the Design and Creating an HDL Wrapper
 - Modifying Constraints File
 - GPIO, MicroBlaze, UART Lite Options
 - MIG_7Series Options

@@ -6,7 +6,7 @@ title: "1. Architecture Design of an Embedded MicroBlaze Processor"
 
 ---
 
-The objective of the first exercise is to create our hardware architecture where to develop the software applications. The architecture is based on MicroBlaze processor on a Kintex7 FPGA:
+The objective of this exercise is to create a hardware architecture on which to develop software applications. The architecture is based on the MicroBlaze processor implemented on a Kintex7 FPGA:
 
 https://digilent.com/reference/programmable-logic/genesys-2/reference-manual
 
@@ -18,12 +18,12 @@ https://xilinx.github.io/Embedded-Design-Tutorials/docs/2022.1/build/html/docs/F
 
 https://digilent.com/reference/programmable-logic/guides/getting-started-with-ipi
 
-The guide described on next paragraphs is based on the previous links.
+The guide described in the following sections is based on the previous links.
 
 ---
 
 ## Objective
-The embedded system needed for the bare metal and RTOS exercises is built in this chapter. An embedded system needs a minimal infrastructure based on a microcontroller, a memory and some peripherals to communicate with the external world.
+The embedded system needed for the bare metal and RTOS exercises is built in this chapter. An embedded system requires minimal infrastructure consisting of a microcontroller, memory, and peripheral devices to communicate with the external world.
 
 This guide will provide a step-by-step walk-through of creating a Microblaze based hardware design using the Vivado IP Integrator for the Genesys2 FPGA board.
 
@@ -55,7 +55,7 @@ design information from Vivado.
 
 ## Design I: Basic System
 
-Microblaze is a soft IP core from Xilinx that will implement a microprocessor entirely within the Xilinx FPGA general purpose memory and logic fabric. For this tutorial, we are going to add a Microblaze IP block using the Vivado IP Integrator tool.
+MicroBlaze is a soft IP core from Xilinx that implements a microprocessor entirely within the Xilinx FPGA general purpose memory and logic fabric. For this tutorial, we are going to add a MicroBlaze IP block using the Vivado IP Integrator tool.
 
 In addition to the Microblaze IP block, we would also like to make use of the DDR3 SDRAM component on the Genesys2. Therefore, a MIG (Memory Interface Generator) IP block will be added to our design.
 
@@ -71,7 +71,7 @@ Finally, a UART (universal asynchronous receiver/transmitter) IP block will be a
 
 ### Step 5: [Validating Design and making an HDL Wrapper](chapter-1-step-5.md)
 
-### Step 6: [Modifying Contrains File (optional)](chapter-1-step-6.md)
+### Step 6: [Modifying Constraints File (optional)](chapter-1-step-6.md)
 
 ### Step 7: [GPIO Options](chapter-1-step-7.md)
 
@@ -87,6 +87,7 @@ Finally, a UART (universal asynchronous receiver/transmitter) IP block will be a
 
 ### Step 13: [Program the Device](chapter-1-step-13.md)
 
+---
 
 ## Design II: Improving the Architecture
 

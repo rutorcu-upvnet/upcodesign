@@ -1,5 +1,5 @@
 ---
-title: "1.22: Project Completion"
+title: "1.22 Project Completion"
 ---
 
 [← Previous: Step 21](chapter-1-step-21.md)
@@ -76,7 +76,7 @@ button:disabled {
 <div class="step active" data-step="1">
 <h2>Program the Device</h2>
 
-This step is the same as [Step 13](chapter-1-step-13.md). Follow that step to generate the bitstream file.
+This step is the same as [Step 13](chapter-1-step-13.md). Follow that step to program the device.
 </div>
 
 <div class="navigation">

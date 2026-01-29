@@ -102,7 +102,7 @@ On the `Run Block Automation` dialog box, select the following values:
 
 <h2>Complete Block Automation</h2>
 
-Click OK. This generates a basic MicroBlaze system in the IP integrator diagram area. The system has been successfully created with all required IP blocks and connections configured automatically.
+Click OK. This generates a basic MicroBlaze system in the IP integrator diagram area. The system is successfully created with all required IP blocks and connections configured automatically.
 
 </div>
 

@@ -1,5 +1,5 @@
 ---
-title: "1.19: Design Validation"
+title: "1.19 Design Validation"
 ---
 
 [← Previous: Step 18](chapter-1-step-18.md)

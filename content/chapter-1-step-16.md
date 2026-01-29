@@ -1,5 +1,5 @@
 ---
-title: "1.16: Adding Interrupt Controller IP"
+title: "1.16 Adding Interrupt Controller IP"
 ---
 
 [← Previous: Step 15](chapter-1-step-15.md)

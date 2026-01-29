@@ -96,7 +96,7 @@ Check the `All Automation` option in the left panel of the dialog box as shown i
 <div class="step" data-step="3">
 <h2>Regenerate Layout (Optional)</h2>
 
-If you need to delete some IP block you can click and delete it. Then select `Regenerate Layout` to reorganize the blocks on the canvas.
+If you need to delete an IP block, you can click and delete it. Then select `Regenerate Layout` to reorganize the blocks on the canvas.
 
 ![Regenerate Layout](img/figure_0023.png)
 

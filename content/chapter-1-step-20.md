@@ -1,5 +1,5 @@
 ---
-title: "1.20: Generating Bitstream File"
+title: "1.20 Generating Bitstream File"
 ---
 
 [← Previous: Step 19](chapter-1-step-19.md)

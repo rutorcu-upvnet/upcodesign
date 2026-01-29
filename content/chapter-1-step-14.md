@@ -1,5 +1,5 @@
 ---
-title: "1.14: Adding New GPIO IP"
+title: "1.14 Adding New GPIO IP"
 ---
 
 [← Previous: Step 13](chapter-1-step-13.md)
@@ -101,6 +101,9 @@ Edit the `AXI GPIO` properties as `Custom` and `All inputs` (see Step 7) and che
 ![Editing the parameters of AXI GPIO](img/figure_0047.png)
 
 <center><em>Figure 47. Editing the parameters of AXI GPIO for the pushbuttons.</em></center>
+
+Remember to uncomment the pin names for BTN connection at the constraint file, as seen in the [Step 6](chapter-1-step-6.md).
+
 </div>
 
 <div class="navigation">

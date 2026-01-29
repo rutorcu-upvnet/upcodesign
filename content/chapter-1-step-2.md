@@ -116,7 +116,7 @@ Click Run Block Automation.
 <div class="step" data-step="5">
 <h2>MIG Connected</h2>
 
-After Block Automation runs the `MIG` is connected.
+After Block Automation runs, the `MIG` is connected.
 
 ![MIG connected](img/figure_0014.png)
 

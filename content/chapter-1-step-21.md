@@ -1,5 +1,5 @@
 ---
-title: "1.21: Verification and Testing"
+title: "1.21 Verification and Testing"
 ---
 
 [← Previous: Step 20](chapter-1-step-20.md)
@@ -74,9 +74,9 @@ button:disabled {
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Export the hardware</h2>
+<h2>Export Hardware</h2>
 
-This step is the same as [Step 12](chapter-1-step-12.md). Follow that step to generate the bitstream file.
+This step is the same as [Step 12](chapter-1-step-12.md). Follow that step to export the hardware.
 </div>
 
 <div class="navigation">
