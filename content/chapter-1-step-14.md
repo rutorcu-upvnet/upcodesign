@@ -1,8 +1,8 @@
 ---
-title: "1.11: Generating Bitstream File"
+title: "1.14: Adding New GPIO IP"
 ---
 
-[← Previous: Step 10](chapter-1-step-10.md)
+[← Previous: Step 13](chapter-1-step-13.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -74,33 +74,33 @@ button:disabled {
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Generate Bitstream</h2>
+<h2>Add AXI GPIO for BTN</h2>
 
-By selecting Generate bitstream, all the synthesis process will start. This may take 5 to 20 minutes depending on your system performance.
+Add a new `AXI GPIO` IP to the Diagram for the BTN interface.
 
-![Generate bitstream](img/figure_0039.png)
+![New AXI GPIO for the pushbuttons](img/figure_0045.png)
 
-<center><em>Figure 39. Generate bitstream.</em></center><br>
+<center><em>Figure 45. New AXI GPIO for the pushbuttons.</em></center><br>
 </div>
 
 <div class="step" data-step="2">
-<h2>Archive Project</h2>
+<h2>Add BTN Input Port</h2>
 
-Save the Project. There are many options to save it. Go to `File` > `Project` > `Archive`.
+Add a new input port connection `BTN` with 5 bits. Follow the same process as in [Step 7](chapter-1-step-7.md).
 
-![Archive Project](img/figure_0040.png)
+![Input Port Connection](img/figure_0046.png)
 
-<center><em>Figure 40. Archive Project.</em></center><br>
+<center><em>Figure 46. Input Port Connection.</em></center><br>
 </div>
 
 <div class="step" data-step="3">
-<h2>Save Archive</h2>
+<h2>Configure AXI GPIO</h2>
 
-TCL scripts are available. Select a name for your project and archive it. Check `Include run results` to accelerate further compilations.
+Edit the `AXI GPIO` properties as `Custom` and `All inputs` (see Step 7) and check `Enable Interrupt`.
 
-![Archive Project Options](img/figure_0041.jpeg)
+![Editing the parameters of AXI GPIO](img/figure_0047.png)
 
-<center><em>Figure 41. Archive Project Options.</em></center><br>
+<center><em>Figure 47. Editing the parameters of AXI GPIO for the pushbuttons.</em></center>
 </div>
 
 <div class="navigation">
@@ -115,4 +115,4 @@ TCL scripts are available. Select a name for your project and archive it. Check 
 
 ---
 
-[Next: Step 12](chapter-1-step-12.md)
+[Next: Step 15](chapter-1-step-15.md)

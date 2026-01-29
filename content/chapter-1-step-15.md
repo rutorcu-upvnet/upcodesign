@@ -1,8 +1,8 @@
 ---
-title: "1.11: Generating Bitstream File"
+title: "1.15: Adding New Timers IP"
 ---
 
-[← Previous: Step 10](chapter-1-step-10.md)
+[← Previous: Step 14](chapter-1-step-14.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -74,39 +74,29 @@ button:disabled {
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Generate Bitstream</h2>
+<h2>Add AXI Timers</h2>
 
-By selecting Generate bitstream, all the synthesis process will start. This may take 5 to 20 minutes depending on your system performance.
+Add two `AXI Timer` modules.
 
-![Generate bitstream](img/figure_0039.png)
+![Add TWO new AXI Timers](img/figure_0048.png)
 
-<center><em>Figure 39. Generate bitstream.</em></center><br>
+<center><em>Figure 48. Adding new AXI Timers.</em></center><br>
 </div>
 
 <div class="step" data-step="2">
-<h2>Archive Project</h2>
+<h2>Configure AXI Timers</h2>
 
-Save the Project. There are many options to save it. Go to `File` > `Project` > `Archive`.
+Configure the `AXI Timer` values.
 
-![Archive Project](img/figure_0040.png)
+![Check the values for the AXI timers](img/figure_0049.png)
 
-<center><em>Figure 40. Archive Project.</em></center><br>
-</div>
-
-<div class="step" data-step="3">
-<h2>Save Archive</h2>
-
-TCL scripts are available. Select a name for your project and archive it. Check `Include run results` to accelerate further compilations.
-
-![Archive Project Options](img/figure_0041.jpeg)
-
-<center><em>Figure 41. Archive Project Options.</em></center><br>
+<center><em>Figure 49. Check the values for the AXI timers.</em></center>
 </div>
 
 <div class="navigation">
   <button id="prevBtn">Previous</button>
   <div class="step-indicator">
-    <span><span id="currentStep">1</span> of <span id="totalSteps">3</span></span>
+    <span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
   </div>
   <button id="nextBtn">Next</button>
 </div>
@@ -115,4 +105,4 @@ TCL scripts are available. Select a name for your project and archive it. Check 
 
 ---
 
-[Next: Step 12](chapter-1-step-12.md)
+[Next: Step 16](chapter-1-step-16.md)

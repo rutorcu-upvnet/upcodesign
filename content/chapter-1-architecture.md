@@ -92,75 +92,20 @@ Finally, a UART (universal asynchronous receiver/transmitter) IP block will be a
 
 In this section we will increase the complexity of the architecture, allowing the use of timers and interrupts. The advantages are obvious: it will allow the use of real-time operating systems or systems based on periodic interrupts.
 
-### Step 1: Adding new IPs
-Add new AXI GPIO for BTN.
-![New AXI GPIO for the pushbuttons](img/page_028_img_01.jpeg)
-<center><em>Figure 45. New AXI GPIO for the pushbuttons.</em></center><br>
+### Step 14: [Adding New GPIO IP](chapter-1-step-14.md)
 
-Add two AXI_Timers.
-![Add TWO new AXI Timers](img/page_028_img_02.jpeg)
-<center><em>Figure 46. Add TWO new AXI Timers.</em></center><br>
+### Step 15: [Adding New Timers IP](chapter-1-step-15.md)
 
-Add one Interrupt Controller.
-![New Interrupt Controller](img/page_028_img_03.jpeg)
-<center><em>Figure 47. New Interrupt Controller.</em></center><br>
+### Step 16: [Adding Interrupt Controller IP](chapter-1-step-16.md)
 
+### Step 17: [Run Connection automation](chapter-1-step-17.md) (see Step 4)
 
-### Step 2: Run Connection automation
+### Step 18: [Concatenation of Interruptions and Connections](chapter-1-step-18.md)
 
+### Step 19: [Design Validation](chapter-1-step-19.md)
 
-### Step 3: Modify the Ports and connections
-![Modifying Input Port](img/page_029_img_01.jpeg)
-<center><em>Figure 48. Modifying Input Port.</em></center><br>
+### Step 20: [Generating Bitstream File](chapter-1-step-20.md) (see Step 11)
 
-![Editing the parameters of AXI GPIO](img/page_029_img_02.jpeg)
-<center><em>Figure 49. Editing the parameters of AXI GPIO for the pushbuttons.</em></center><br>
+### Step 21: [Export the hardware](chapter-1-step-21.md) (see Step 12)
 
-The Interruption from BTN is enabled.
-![Check the values for the AXI timers](img/page_029_img_03.jpeg)
-<center><em>Figure 50. Check the values for the AXI timers.</em></center><br>
-
-
-### Step 4: Concatenation of Interruptions and connections
-Add a Concat IP module
-![New Concat Block](img/page_030_img_01.jpeg)
-<center><em>Figure 51. New Concat Block.</em></center><br>
-
-![Editing the Concat for 3 inputs](img/page_030_img_02.jpeg)
-<center><em>Figure 52. Editing the Concat for 3 inputs.</em></center><br>
-
-Connect the output interruption from Timers and BTN to the Concat inputs. Connect the output from the Concat to the input interruption of Interrupt Controller. Connect the output of the Interrupt Controller to the input interruption bus of the MicroBlaze processor. Check Validate the Design.
-![Validating the design](img/page_030_img_03.jpeg)
-<center><em>Figure 53. Validating the design.</em></center><br>
-
-![Expected result](img/page_031_img_01.jpeg)
-<center><em>Figure 54. Expected result.</em></center><br>
-
-
-### Step 6: Synthesizing the system
-
-
-### Step 7 (optional)
-If the previous system was tested with a hello_world application and a sleep function, export new XSA file, test again the same example modifying the BSP options for the new timers included as sleep_timer.
-![Adding the timers in the BSP Settings](img/page_031_img_02.jpeg)
-<center><em>Figure 55. Adding the timers in the BSP Settings.</em></center><br>
-
-
-### Step 8. Show the results to the Teacher.
-```c
-#include "xil_printf.h"
-#include "sleep.h"
-#include "xiltimer.h"
-
-int main()
-{
-    xil_printf("Hello World\n\r");
-    xil_printf("Successfully ran Hello World application\n\r");
-    while(1){
-        xil_printf("My life is a continuous loop\n\r");
-        sleep(1);
-    }
-    return 0;
-}
-```
-
+### Step 22: [Program the Device](chapter-1-step-22.md) (see Step 13)

@@ -1,8 +1,8 @@
 ---
-title: "1.11: Generating Bitstream File"
+title: "1.18: Concatenation of Interruptions and Connections"
 ---
 
-[← Previous: Step 10](chapter-1-step-10.md)
+[← Previous: Step 17](chapter-1-step-17.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -74,33 +74,33 @@ button:disabled {
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Generate Bitstream</h2>
+<h2>Add Concat IP</h2>
 
-By selecting Generate bitstream, all the synthesis process will start. This may take 5 to 20 minutes depending on your system performance.
+Add a `Concat` IP module.
 
-![Generate bitstream](img/figure_0039.png)
+![New Concat Block](img/figure_0051.png)
 
-<center><em>Figure 39. Generate bitstream.</em></center><br>
+<center><em>Figure 51. New Concat Block.</em></center><br>
 </div>
 
 <div class="step" data-step="2">
-<h2>Archive Project</h2>
+<h2>Configure Concat Inputs</h2>
 
-Save the Project. There are many options to save it. Go to `File` > `Project` > `Archive`.
+Edit the Concat module properties with 3 inputs.
 
-![Archive Project](img/figure_0040.png)
+![Editing the Concat for 3 inputs](img/figure_0052.png)
 
-<center><em>Figure 40. Archive Project.</em></center><br>
+<center><em>Figure 52. Editing the Concat for 3 inputs.</em></center><br>
 </div>
 
 <div class="step" data-step="3">
-<h2>Save Archive</h2>
+<h2>Connect Interrupt Signals</h2>
 
-TCL scripts are available. Select a name for your project and archive it. Check `Include run results` to accelerate further compilations.
+Connect the output interruption from `AXI Timers` and `BTN` to the Concat inputs. Connect the output from the `Concat` to the input interruption of `AXI Interrupt Controller`. Connect the output of the `AXI Interrupt Controller` to the input interruption bus of the `MicroBlaze` processor.
 
-![Archive Project Options](img/figure_0041.jpeg)
+![Interrupt connections](img/figure_0053.png)
 
-<center><em>Figure 41. Archive Project Options.</em></center><br>
+<center><em>Figure 53. Interrupt connections.</em></center>
 </div>
 
 <div class="navigation">
@@ -115,4 +115,4 @@ TCL scripts are available. Select a name for your project and archive it. Check 
 
 ---
 
-[Next: Step 12](chapter-1-step-12.md)
+[Next: Step 19](chapter-1-step-19.md)
