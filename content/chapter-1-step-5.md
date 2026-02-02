@@ -2,7 +2,7 @@
 title: "1.5 Validating Design and Making an HDL Wrapper"
 ---
 
-[← Previous: Step 4](chapter-1-step-4.md)
+[Previous: Step 4](chapter-1-step-4.md)
 
 <script src="./static/step-navigation.js"></script>
 

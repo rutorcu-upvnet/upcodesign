@@ -2,7 +2,7 @@
 title: "1.12 Export the Hardware"
 ---
 
-[← Previous: Step 11](chapter-1-step-11.md)
+[Previous: Step 11](chapter-1-step-11.md)
 
 <script src="./static/step-navigation.js"></script>
 

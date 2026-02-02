@@ -2,7 +2,7 @@
 title: "1.1 New Project Wizard"
 ---
 
-[← Back to Chapter 1](chapter-1-architecture.md)
+[Back to Chapter 1](chapter-1-architecture.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -169,6 +169,8 @@ The project has been created successfully. You now see the main Vivado IDE windo
   <button id="nextBtn">Next</button>
 </div>
 
-</div></div>
+</div>
+
+---
 
 [Next: Step 2](chapter-1-step-2.md)

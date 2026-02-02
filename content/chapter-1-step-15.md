@@ -2,7 +2,7 @@
 title: "1.15 Adding New Timers IP"
 ---
 
-[← Previous: Step 14](chapter-1-step-14.md)
+[Previous: Step 14](chapter-1-step-14.md)
 
 <script src="./static/step-navigation.js"></script>
 

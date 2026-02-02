@@ -7,16 +7,9 @@ title: "Chapter 3: FreeRTOS on AMD Kintex7 FPGA"
 ![](img/page_065_img_02.jpeg)
 
 
-[← Back to Index](index.md)
+[Back to Index](index.md)
 
-FREERTOS ON AMD KINTEX7 FPGA
-Exercise 1: Creating a project with FreeRTOS.
-1. Vivado: Create a timer to work like FreeRTOS SysTick.
-2. Export the HW and launch a new Vitis platform with FreeRTOS OS for
-Microblaze.
-3. In BSP edit settings and select timers appropriately.
-FreeRTOS Setup
-@Marcos Martínez Peiró, Feb 25. Pag 64
+
 
 ---
 

@@ -2,7 +2,7 @@
 title: "1.13 Program the Device"
 ---
 
-[← Previous: Step 12](chapter-1-step-12.md)
+[Previous: Step 12](chapter-1-step-12.md)
 
 <script src="./static/step-navigation.js"></script>
 

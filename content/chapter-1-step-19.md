@@ -2,7 +2,7 @@
 title: "1.19 Design Validation"
 ---
 
-[← Previous: Step 18](chapter-1-step-18.md)
+[Previous: Step 18](chapter-1-step-18.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -91,6 +91,9 @@ If all the modules and connections are OK, you will get a confirmation message.
 ![Expected result](img/figure_0055.png)
 
 <center><em>Figure 55. Expected result.</em></center>
+
+Remember to update the HDL wrapper, as seen in the [Step 5](chapter-1-step-5.md).
+
 </div>
 
 <div class="navigation">

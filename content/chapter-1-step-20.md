@@ -2,7 +2,7 @@
 title: "1.20 Generating Bitstream File"
 ---
 
-[← Previous: Step 19](chapter-1-step-19.md)
+[Previous: Step 19](chapter-1-step-19.md)
 
 <script src="./static/step-navigation.js"></script>
 

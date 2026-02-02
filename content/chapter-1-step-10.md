@@ -2,7 +2,7 @@
 title: "1.10 MIG_7Series Options (optional)"
 ---
 
-[← Previous: Step 9](chapter-1-step-9.md)
+[Previous: Step 9](chapter-1-step-9.md)
 
 <script src="./static/step-navigation.js"></script>
 

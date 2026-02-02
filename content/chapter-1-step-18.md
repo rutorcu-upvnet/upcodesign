@@ -2,7 +2,7 @@
 title: "1.18 Concatenation of Interruptions and Connections"
 ---
 
-[← Previous: Step 17](chapter-1-step-17.md)
+[Previous: Step 17](chapter-1-step-17.md)
 
 <script src="./static/step-navigation.js"></script>
 

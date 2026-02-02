@@ -2,11 +2,11 @@
 title: "1. Architecture Design of an Embedded MicroBlaze Processor"
 ---
 
-[← Back to Index](index.md)
+[Back to Index](index.md)
 
 ---
 
-The objective of this exercise is to create a hardware architecture on which to develop software applications. The architecture is based on the MicroBlaze processor implemented on a Kintex7 FPGA:
+With this exercise we will create a hardware architecture on which to develop software applications. The architecture is based on the MicroBlaze processor implemented on a Kintex7 FPGA:
 
 https://digilent.com/reference/programmable-logic/genesys-2/reference-manual
 

@@ -2,7 +2,7 @@
 title: "1.3 Run Block Automation"
 ---
 
-[← Previous: Step 2](chapter-1-step-2.md)
+[Previous: Step 2](chapter-1-step-2.md)
 
 <script src="./static/step-navigation.js"></script>
 

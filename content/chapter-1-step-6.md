@@ -2,7 +2,7 @@
 title: "1.6 Modifying Constraints File (Optional)"
 ---
 
-[← Previous: Step 5](chapter-1-step-5.md)
+[Previous: Step 5](chapter-1-step-5.md)
 
 <script src="./static/step-navigation.js"></script>
 

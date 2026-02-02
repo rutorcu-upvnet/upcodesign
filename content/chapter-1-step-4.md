@@ -2,7 +2,7 @@
 title: "1.4 Use Connection Automation"
 ---
 
-[← Previous: Step 3](chapter-1-step-3.md)
+[Previous: Step 3](chapter-1-step-3.md)
 
 <script src="./static/step-navigation.js"></script>
 

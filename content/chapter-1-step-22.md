@@ -2,7 +2,7 @@
 title: "1.22 Project Completion"
 ---
 
-[← Previous: Step 21](chapter-1-step-21.md)
+[Previous: Step 21](chapter-1-step-21.md)
 
 <script src="./static/step-navigation.js"></script>
 

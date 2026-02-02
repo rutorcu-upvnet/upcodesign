@@ -2,7 +2,7 @@
 title: "1.16 Adding Interrupt Controller IP"
 ---
 
-[← Previous: Step 15](chapter-1-step-15.md)
+[Previous: Step 15](chapter-1-step-15.md)
 
 <script src="./static/step-navigation.js"></script>
 

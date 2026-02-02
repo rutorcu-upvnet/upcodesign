@@ -1,51 +1,43 @@
 ---
-title: "Chapter 2: BareMetal Software Development for MicroBlaze"
+title: "2. BareMetal Software Development for MicroBlaze"
 ---
 
-![](img/page_033_img_01.jpeg)
+[Back to Index](index.md)
 
+---
 
-[← Back to Index](index.md)
+One thing a programmer needs to know is the web pages than can be useful to read, study or copy examples to learn about the AMD products and embedded software applications. The officials from AMD are:
 
-BAREMETAL SOFTWARE DEVELOPMENT FOR
-MICROBLAZE SOFT PROCESSOR
-Previous Knowledge Database and useful links
-One thing a programmer needs to know is the web pages than can be useful to read,
-study or copy examples to learn about the AMD products and embedded software
-applications. The o(cid:431)icials from AMD are:
 BareMetal
-https://xilinx-
-wiki.atlassian.net/wiki/spaces/A/pages/18841745/Baremetal+Drivers+and+Librari
-es, then when you select a specific driver for a peripheral implementation the link
-moves to Xilinx (AMD) github:
+
+https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841745/Baremetal+Drivers+and+Libraries
+
+Specific driver for a peripheral implementation the link moves to Xilinx (AMD) github:
+
 https://github.com/Xilinx/embeddedsw/tree/master/XilinxProcessorIPLib/drivers
+
 FreeRTOS
+
 https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842141/FreeRTOS
+
 General Xilinx FPGA Wiki
+
 https://xilinx-wiki.atlassian.net/wiki/spaces/A/overview
+
 Drivers for Intellectual Properties (IPs)
+
 https://www.xilinx.com/products/intellectual-property.html
+
 In case to look for GPIO:
-https://www.xilinx.com/products/intellectual-property/nav-interface-
-interconnect/nav-axi-infrastructure.html
+
+https://www.xilinx.com/products/intellectual-property/nav-interface-interconnect/nav-axi-infrastructure.html
+
 Genesys 2 board Examples Projects (Digilent)
-https://digilent.com/reference/programmable-logic/genesys-
-2/demos/start?srsltid=AfmBOoqlkKBwlWdxqCKJZg7MvGugNzdp79s66YtSQYMNS
-4Cw4rl9kuL3
-@Marcos Martínez Peiró, Feb 25. Pag 32
 
----
-
-![](img/page_034_img_01.jpeg)
-
-![](img/page_034_img_02.jpeg)
-
-![](img/page_034_img_03.jpeg)
-
-![](img/page_034_img_04.jpeg)
+https://digilent.com/reference/programmable-logic/genesys-2/demos/start?srsltid=AfmBOoqlkKBwlWdxqCKJZg7MvGugNzdp79s66YtSQYMNS4Cw4rl9kuL3
 
 
-Exercise 1: Hello MicroBlaze.
+## [Exercise 1: Hello MicroBlaze](chapter-2-exercise-1.md)
 Objectives:
  Familiarize yourself with the VITIS environment, programming, and
 debugging.
@@ -54,6 +46,9 @@ debugging.
 Step 1. Create a new Platform.
 Open the Vitis IDE.
 Select File/New Platform
+
+![](img/page_033_img_01.jpeg)
+
 <center>Figure 56. Creating a new platform in Vitis IDE.</center>
 Then write a name for the platform: genesys2_std_microblaze
 Then select the XSA file you created from Vivado. This file describes the hardware
@@ -66,10 +61,13 @@ standalone to work with BareMetal applications.
 
 ---
 
-![](img/page_035_img_01.jpeg)
+![](img/page_034_img_01.jpeg)
 
-![](img/page_035_img_02.jpeg)
+
+
 <center>Figure 57. Standalone, FreeRTOS and Linux OS for the Platform.</center>
+![](img/page_034_img_02.jpeg)
+
 <center>Figure 58. Processor and Operating System.</center>
 Once the platform has been created compile it. Look at the structure of the
 platform, this represents the lower layers of software: the BSP (Board Support
@@ -77,16 +75,19 @@ Package) with the drivers that connect the peripheral and the Microblaze process
 To compile the platform, select in the Flow window Build to compile. In the same
 window, by selecting the wheel the setting JSON file open, this file is under the
 setting folder and represent the settings for the platform compilation process.
+![](img/page_034_img_03.jpeg)
+
 <center>Figure 59. Building the platform.</center>
+![](img/page_034_img_04.jpeg)
 <center>Figure 60. Settings file for the platform</center>
 @Marcos Martínez Peiró, Feb 25. Pag 34
 
 ---
 
-![](img/page_036_img_01.jpeg)
+![](img/page_035_img_01.jpeg)
 
-![](img/page_036_img_02.jpeg)
 <center>Figure 61. UART selection as stdout and stdin for the platform.</center>
+![](img/page_035_img_02.jpeg)
 <center>Figure 62. Sleep timer timer and tick timer for the platform.</center>
 Now we are ready to create applications over the platform thus creating a complete
 software layer architecture.
@@ -99,14 +100,12 @@ examples.
 
 ---
 
-![](img/page_037_img_01.jpeg)
+![](img/page_036_img_01.jpeg)
 
-![](img/page_037_img_02.jpeg)
-
-![](img/page_037_img_03.jpeg)
 <center>Figure 63. Examples from the Vitis IDE.</center>
 Select Hello_World Example and call the new component
 Genesys2_BareMetal_App.
+![](img/page_036_img_02.jpeg)
 <center>Figure 64. Creating an application from the scratch.</center>
 Select the Platform to work on (the one you created in the previous exercise).
 Once the application has been created look into the settings folder and select the
@@ -115,26 +114,26 @@ setting for the application.
 
 ---
 
-![](img/page_038_img_01.jpeg)
+![](img/page_037_img_01.jpeg)
+
 <center>Figure 65. Settings for the application.</center>
 The setting allows us to change the XSA file by selecting the Switch Platform (this
 only is used when exist a modification on the hardware structure from Vivado)
 Check the Platform Information to verify the hardware structure of our system.
 Check the Compiler Setting where you can select di(cid:431)erent compiler optimization
 methods.
+![](img/page_037_img_02.jpeg)
+
 <center>Figure 66. Compiler Setting.</center>
 Once the setting is understood, investigate the C files under the folder Sources.
+![](img/page_037_img_03.jpeg)
+
+
 <center>Figure 67. Source files.</center>
 Open the helloworld.c example.
 @Marcos Martínez Peiró, Feb 25. Pag 37
 
 ---
-
-![](img/page_039_img_01.jpeg)
-
-![](img/page_039_img_02.jpeg)
-
-![](img/page_039_img_03.jpeg)
 
 
 One of the issues working on predefined examples is the inclusion of many macros
@@ -160,22 +159,30 @@ The functions init_platform() and cleanup_platform() call a predefined UART that
 does not match the one we use in the architecture (uart_lite). The files platform.c
 and platform.h could be erased from the application.
 1. Select BUILD to compile the code.
+
+![](img/page_038_img_01.jpeg)
+
+
 <center>Figure 68. Compiling in VITIS.</center>
 2. Then select the DEBUG session:
 @Marcos Martínez Peiró, Feb 25. Pag 38
 
 ---
+![](img/page_039_img_01.jpeg)
 
-![](img/page_040_img_01.jpeg)
 <center>Figure 69. Debug session.</center>
 Before to DEBUG select the configuration wheel settings to shows the options in
 the debugger session.
+![](img/page_039_img_02.jpeg)
+
 <center>Figure 70. Settings for the debugger session.</center>
 If the FPGA was programmed from Vivado you can unselect the Program Device
 and Reset Entire System. If not, select both options. Once the board has been
 programmed you can unselect for next sessions of debugger.
 Reset the processor is recommended to initialize the running of MicroBlaze.
 3. Then click on DEBUG, after some second the DEBUG sessions start.
+![](img/page_039_img_03.jpeg)
+
 <center>Figure 71. Continuous run, step and restart.</center>
 @Marcos Martínez Peiró, Feb 25. Pag 39
 
@@ -185,6 +192,7 @@ You can use StepOver to debug each code line. You can insert Breakpoints as usua
 in a debugger environment.
 Open a serial terminal in your computer and look the received messages (configure
 the serial port according with the AXI_UART defined in the architecture).
+![](img/page_040_img_01.jpeg)
 <center>Figure 72. Serial Monitor in VSC.</center>
 TIP
 When working with a UART on a MicroBlaze system, there are key di(cid:431)erences between xil_printf() and printf(),
@@ -222,7 +230,6 @@ previously the Hardware Platform from VIVADO®.
 
 ---
 
-![](img/page_042_img_01.jpeg)
 
 
 Step 3. Messages in a forever loop.
@@ -266,12 +273,12 @@ Use #ifdef and #endif to create new examples on the same code.
 These are the libraries needed for the GPIO control exercise:
 a) xgpio.h to use the read and write function for the GPIO.
 b) xparameter.h describes the contents of the hardware architecture
+![](img/page_042_img_01.jpeg)
 <center>Figure 73. xparameter file.</center>
 @Marcos Martínez Peiró, Feb 25. Pag 42
 
 ---
 
-![](img/page_044_img_01.jpeg)
 
 
 Step 2. Constant and prototype functions.
@@ -309,7 +316,6 @@ xil_printf("\n\r Valor de SW: %lu \n\r", (unsigned long) SW_read);
 
 ---
 
-![](img/page_045_img_01.jpeg)
 
 
 /* Set the LED to the value of the switches */
@@ -319,6 +325,7 @@ XGpio_DiscreteWrite(&Gpio_sw_led, LED_CHANNEL, LED_write);
 usleep(LED_DELAY);
 Step 5: Compile and Debug
 Use the DEBUG session to look at the memory region of the GPIO switches.
+![](img/page_044_img_01.jpeg)
 <center>Figure 74. Debugging memory region.</center>
 By debugging step-by-step try to modify the switches in each iteration to read the
 peripheral memory region.
@@ -327,9 +334,6 @@ Change switches and look at the LEDs on the Genesys2 board.
 
 ---
 
-![](img/page_046_img_01.jpeg)
-
-![](img/page_046_img_02.jpeg)
 
 
 Exercise 3. Managing GPIO. Part II.
@@ -344,6 +348,7 @@ direction.
 Program the code, compile and debug.
 Use the step-to-step debugging and watch local variables to expand the
 debugging capabilities.
+![](img/page_045_img_01.jpeg)
 <center>Figure 75. Local Variables in the Vitis Debugger.</center>
 An additional debugging is to show the disassembly of the C code. In the C code
 line click on the right button of the mouse and a menu expands.
@@ -351,17 +356,16 @@ line click on the right button of the mouse and a menu expands.
 
 ---
 
-![](img/page_047_img_01.jpeg)
-
-![](img/page_047_img_02.jpeg)
+![](img/page_046_img_01.jpeg)
 <center>Figure 76. Disassembly option in the debugger.</center>
+
+![](img/page_046_img_02.jpeg)
 <center>Figure 77. Disassembly of the C code.</center>
 Show the result to the teacher!
 @Marcos Martínez Peiró, Feb 25. Pag 46
 
 ---
 
-![](img/page_048_img_01.jpeg)
 
 
 Exercise 4. Managing GPIO. Part III. Pushbutton and interruptions.
@@ -376,11 +380,15 @@ The macro XGPIO_IR_CH1_MASK with value
 #define XPAR_XGPIO_1_BASEADDR 0x40010000
 Is described in the file xparameters.h that represents the memory map of our
 hardware architecture.
+![](img/page_047_img_01.jpeg)
+
 <center>Figure 78. Axi GPIO 1 with the connection of BTNs.</center>
+![](img/page_047_img_02.jpeg)
 <center>Figure 79. Memory map for the axi_gpio_1.</center>
 @Marcos Martínez Peiró, Feb 25. Pag 47
 
 ---
+![](img/page_048_img_01.jpeg)
 
 <center>Figure 80. Configuration of AXI_GPIO_1 for the BTNs.</center>
 Step 1. Include libraries and constants.
@@ -525,11 +533,6 @@ usleep(100000); // 0,1s for the loop again
 
 ---
 
-![](img/page_053_img_01.jpeg)
-
-![](img/page_053_img_02.jpeg)
-
-![](img/page_053_img_03.jpeg)
 
 
 Step 6. The Interrupt Service Routine (ISR) for the GPIO BTN example.
@@ -572,12 +575,6 @@ Final Step. Compile and show the results to the teacher.
 
 ---
 
-![](img/page_054_img_01.jpeg)
-
-![](img/page_054_img_02.jpeg)
-
-![](img/page_054_img_03.jpeg)
-
 
 Exercise 5. Managing the AXI Timer. POLLING.
 One of the basic peripherals in every microcontroller architecture is a timer. The
@@ -585,8 +582,14 @@ Vivado architecture created builds two AXI Timers that will be managed in this
 section. Axi Timer 0 and 1 will be used as sleep and tick timer respectively. The inner
 characteristics of each AXI Timer let to create up to 2 timers (counters) in the same
 AXI Timer architectural block by using counters of 32 bits instead one of 64 bits.
+![](img/page_053_img_01.jpeg)
+
 <center>Figure 81. The AXI timer 0 and 1 in the hardware architecture.</center>
+![](img/page_053_img_02.jpeg)
+
 <center>Figure 82. Memory map region for the AXI timer 0 and AXI Timer 1in the hardware architecture.</center>
+![](img/page_053_img_03.jpeg)
+
 <center>Figure 83. Parameters of timer 0. Two timers are enabled in each AXI Timer.</center>
 @Marcos Martínez Peiró, Feb 25. Pag 53
 
@@ -594,10 +597,15 @@ AXI Timer architectural block by using counters of 32 bits instead one of 64 bit
 
 First thing is to study the peripheral, AMD easiest method to locate the documents
 are the links in the Documentation tab in the peripheral IP Block in the Vivado IDE.
+![](img/page_054_img_01.jpeg)
+
 <center>Figure 84. Searching documentation of the AXI Timer.</center>
+![](img/page_054_img_02.jpeg)
+
 <center>Figure 85. Data Sheet of the AXI Timer.</center>
 Step 1. Check Setting in the platform.
 Check the timers selected in the platform
+![](img/page_054_img_03.jpeg)
 <center>Figure 86. Configuration of timers.</center>
 Axi_timer 0 is selected as sleep_timer thus sleep() library and function will use it.
 Axi_timer 1 is selected as tick timer, managing the functionality of a classical
@@ -923,11 +931,6 @@ XTmrCtr_SetOptions(InstancePtr, TmrCtrNumber, 0); // Disable the timer counter
 
 ---
 
-![](img/page_064_img_01.jpeg)
-
-![](img/page_064_img_02.jpeg)
-
-![](img/page_064_img_03.jpeg)
 
 
 Step 4: Doing anything in the while loop.
@@ -966,3 +969,18 @@ return XST_SUCCESS;
 }
 Step 5. Show the result to the teacher.
 @Marcos Martínez Peiró, Feb 25. Pag 63
+
+![](img/page_064_img_01.jpeg)
+
+![](img/page_064_img_02.jpeg)
+
+![](img/page_064_img_03.jpeg)
+
+FREERTOS ON AMD KINTEX7 FPGA
+Exercise 1: Creating a project with FreeRTOS.
+1. Vivado: Create a timer to work like FreeRTOS SysTick.
+2. Export the HW and launch a new Vitis platform with FreeRTOS OS for
+Microblaze.
+3. In BSP edit settings and select timers appropriately.
+FreeRTOS Setup
+@Marcos Martínez Peiró, Feb 25. Pag 64

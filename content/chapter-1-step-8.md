@@ -2,7 +2,7 @@
 title: "1.8 MicroBlaze Options"
 ---
 
-[← Previous: Step 7](chapter-1-step-7.md)
+[Previous: Step 7](chapter-1-step-7.md)
 
 <script src="./static/step-navigation.js"></script>
 

@@ -2,7 +2,7 @@
 title: "1.14 Adding New GPIO IP"
 ---
 
-[← Previous: Step 13](chapter-1-step-13.md)
+[Previous: Step 13](chapter-1-step-13.md)
 
 <script src="./static/step-navigation.js"></script>
 

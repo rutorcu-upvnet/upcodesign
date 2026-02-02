@@ -2,7 +2,7 @@
 title: "1.7 GPIO Options"
 ---
 
-[← Previous: Step 6](chapter-1-step-6.md)
+[Previous: Step 6](chapter-1-step-6.md)
 
 <script src="./static/step-navigation.js"></script>
 

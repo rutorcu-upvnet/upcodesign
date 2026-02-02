@@ -2,7 +2,7 @@
 title: "1.9 UART Lite Options"
 ---
 
-[← Previous: Step 8](chapter-1-step-8.md)
+[Previous: Step 8](chapter-1-step-8.md)
 
 <script src="./static/step-navigation.js"></script>
 

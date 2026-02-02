@@ -2,7 +2,7 @@
 title: "1.2 Create an IP Integrator Design"
 ---
 
-[← Previous: Step 1](chapter-1-step-1.md)
+[Previous: Step 1](chapter-1-step-1.md)
 
 <script src="./static/step-navigation.js"></script>
 

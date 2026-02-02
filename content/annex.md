@@ -2,7 +2,7 @@
 title: "Annex"
 ---
 
-[← Back to Index](index.md)
+[Back to Index](index.md)
 
 Annex 1.
 Solution to exercise GPIO LEDs.

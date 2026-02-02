@@ -2,7 +2,7 @@
 title: "1.21 Verification and Testing"
 ---
 
-[← Previous: Step 20](chapter-1-step-20.md)
+[Previous: Step 20](chapter-1-step-20.md)
 
 <script src="./static/step-navigation.js"></script>
 
