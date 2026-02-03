@@ -1,0 +1,70 @@
+/* Image Hover Preview Styles */
+
+.image-hover-preview {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.image-hover-preview img {
+    animation: imageZoomIn 0.2s ease-out;
+}
+
+@keyframes imageZoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Add zoom cursor to content images */
+article img,
+.step img,
+.popover-hint img {
+    transition: box-shadow 0.2s ease;
+}
+
+/* Optional: Add a subtle border to images */
+article img,
+.step img {
+    border: 1px solid var(--lightgray, #e0e0e0);
+    border-radius: 4px;
+}
+
+/* Loading state for images */
+article img,
+.step img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+}
+
+/* Dark mode support */
+:root[saved-theme="dark"] .image-hover-preview {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+:root[saved-theme="dark"] article img,
+:root[saved-theme="dark"] .step img {
+    border-color: var(--darkgray, #4a4a4a);
+}
+
+/* Mobile - disable hover effect on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+    article img,
+    .step img,
+    .popover-hint img {
+        cursor: zoom-in;
+    }
+}
+
+/* Print - no hover effects */
+@media print {
+    .image-hover-preview {
+        display: none !important;
+    }
+}

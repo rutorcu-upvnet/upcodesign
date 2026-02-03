@@ -38,10 +38,10 @@ title: "Firmware Development in Embedded Systems"
 
 ### [Chapter 2: BareMetal Software Development for MicroBlaze](chapter-2-baremetal.md)
 
-- **Exercise 1:** Hello MicroBlaze
-- **Exercise 2:** Managing GPIO - Part I
-- **Exercise 3:** Managing GPIO - Part II
-- **Exercise 4:** Managing GPIO - Part III (Pushbutton and Interruptions)
+- **Exercise 1:** [Hello MicroBlaze](chapter-2-exercise-1.md)
+- **Exercise 2:** [Managing GPIO](chapter-2-exercise-2.md) Part I
+- **Exercise 3:** [Managing GPIO](chapter-2-exercise-3.md) Part II
+- **Exercise 4:** [Managing GPIO](chapter-2-exercise-4.md) Part III (Pushbutton and Interrupts)
 - **Exercise 5:** Managing the AXI Timer - POLLING
 - **Exercise 6:** Managing the AXI Timer - INTERRUPT
 

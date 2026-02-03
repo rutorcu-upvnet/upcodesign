@@ -209,6 +209,8 @@ Once the platform is created, you can now develop applications. Open Vitis envir
 <div class="step" data-step="11">
 <h2>Select Hello World Application</h2>
 
+> [!warning] The starting point consider that you have already created a `Platform`.
+
 Select `Hello World` application and `Create Application Component from Template`
 
 ![Select Hello World](img/figure_0065.png)
@@ -239,7 +241,7 @@ Select your platform `genesys2_std_microblaze` and finish the process. The appli
 <div class="step" data-step="14">
 <h2>Configure your application</h2>
 
-Explore the application settings folder
+Once the application has been created, you can explore the application folder and settings.
 
 ![Application settings configuration](img/figure_0068.png)
 
@@ -247,8 +249,8 @@ Explore the application settings folder
 
 > [!info] Key Settings Options
 >
-> Switch Platform: Change XSA file if hardware modifications were made<br>
-> Platform Information: Verify hardware structure<br>
+> - You can change the XSA file by selecting the Switch Platform (this is used to update hardware  modifications on Vivado)<br>
+> - Platform Information allows to verify hardware structure<br>
 
 </div>
 <div class="step" data-step="15">
@@ -264,7 +266,7 @@ Check the `Compiler Setting` where you can select diƯerent compiler optimizatio
 <div class="step" data-step="16">
 <h2>Examine Source Files</h2>
 
-Navigate to the `Sources` folder to view the generated C files and open the `helloworld.c` file to understand the basic template structure. Note that the template includes many libraries for convenience, but you can optimize by removing unnecessary ones.
+Navigate to the `Sources` folder to view the generated C files and open the `helloworld.c` file to understand the basic template structure. Note that the template includes many libraries for convenience, but you can optimize the code by removing unnecessary ones.
 
 ![Source files structure](img/figure_0070.png)
 
@@ -293,11 +295,11 @@ int main()
 }
 ```
 
-> [!info] Benefits
+> [!info]
 >
-> Removing `stdio.h` reduces code size significantly<br>
-> Removing `platform.h` eliminates initialization overhead if not needed<br>
-> Keeping `xil_printf.h` provides lightweight printf for debugging<br>
+> - Removing `stdio.h` reduces code size significantly<br>
+> - Removing `platform.h` eliminates initialization overhead if not needed<br>
+> - Keeping `xil_printf.h` provides lightweight printf for debugging<br>
 
 </div>
 <div class="step" data-step="18">
@@ -311,7 +313,7 @@ Build your optimized application. Select the created application at the `Flow` t
 
 Once successful, the executable is ready for programming
 
-> [!attention] Make sure
+> [!warning] Make sure that
 > 
 > - The platform built successfully with no errors<br>
 > - The application code compiles without warnings<br>
@@ -321,7 +323,11 @@ Once successful, the executable is ready for programming
 <div class="step" data-step="19">
 <h2>Program and Test</h2>
 
-To run your application select `Debug` from the `Flow` tab. That should download the bitstream and the application to the board. Open a terminal emulator connected to the UART (usually COM port) and run the program from the debug console. You should see "Hello MicroBlaze!" printed to the console.
+To run your application select `Debug` from the `Flow` tab. That should download the bitstream and the application to the board. 
+
+Open a terminal emulator connected to the UART ((configure the serial port according with the AXI_UART defined in the architecture) and run the program from the debug console. You should see "Hello MicroBlaze!" printed to the console.
+
+You can use StepOver to debug each code line. You can insert Breakpoints as usual in a debugger environment.
 
 ![BuDebugild application](img/figure_0072.png)
 
@@ -335,7 +341,7 @@ Your first BareMetal application is now running on the MicroBlaze processor!
 
 Select the configuration wheel settings to shows the options in the debugger session. If the FPGA was already programmed, you can unselect the `Program Device` option. The `Reset Entire System` is recommended to initialize the running of MicroBlaze.
 
-![Debug application options](img/figure_0072.png)
+![Debug application options](img/figure_0073.png)
 
 <center><em>Figure 73. Debug application options.</em></center><br>
 
@@ -367,9 +373,7 @@ Hello World, successfully ran number 0
 Hello World, successfully ran number 1
 Hello World, successfully ran number 2
 Hello World, successfully ran number 3
-Hello World, successfully ran number 4
-Hello World, successfully ran number 5
-Hello World, successfully ran number 6
+...
 ```
 
 > [!info] If your hardware does not contain an `AXI Timer`, the timer used is the inner `MicroBlaze` timer. The time response of the `sleep()` function is highly dependent of the `MicroBlaze` frequency operation from your Vivado Design.
