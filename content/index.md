@@ -38,12 +38,12 @@ title: "Firmware Development in Embedded Systems"
 
 ### [Chapter 2: BareMetal Software Development for MicroBlaze](chapter-2-baremetal.md)
 
-- **Exercise 1:** [Hello MicroBlaze](chapter-2-exercise-1.md)
-- **Exercise 2:** [Managing GPIO](chapter-2-exercise-2.md) Part I
-- **Exercise 3:** [Managing GPIO](chapter-2-exercise-3.md) Part II
-- **Exercise 4:** [Managing GPIO](chapter-2-exercise-4.md) Part III (Pushbutton and Interrupts)
-- **Exercise 5:** Managing the AXI Timer - POLLING
-- **Exercise 6:** Managing the AXI Timer - INTERRUPT
+- Exercise 1: [Hello MicroBlaze](chapter-2-exercise-1.md)
+- Exercise 2: [Managing GPIO Part I](chapter-2-exercise-2.md)
+- Exercise 3: [Managing GPIO Part II](chapter-2-exercise-3.md)
+- Exercise 4: [Managing GPIO Part III](chapter-2-exercise-4.md) (Pushbutton and Interrupts)
+- Exercise 5: [Managing the AXI Timer](chapter-2-exercise-5.md) (Polling)
+- Exercise 6: [Managing the AXI Timer](chapter-2-exercise-6.md) (Interrupt)
 
 ### [Chapter 3: FreeRTOS on AMD Kintex7 FPGA](chapter-3-freertos.md)
 

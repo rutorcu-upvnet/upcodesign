@@ -2,7 +2,7 @@
 title: "2.1 Exercise 1: Hello MicroBlaze"
 ---
 
-[← Back to Chapter 2](chapter-2-baremetal.md)
+[Back to Chapter 2](chapter-2-baremetal.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -420,4 +420,4 @@ xil_printf(): Already optimized to send data directly to UART in Xilinx embedded
 
 ---
 
-[Next: Exercise 2 - Managing GPIO - Part I](chapter-2-exercise-2.md)
+[Next: Exercise 2](chapter-2-exercise-2.md)
