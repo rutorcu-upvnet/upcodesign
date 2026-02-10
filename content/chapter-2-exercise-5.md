@@ -317,4 +317,4 @@ Monitor the console output:
 
 ---
 
-[← Exercise 4](chapter-2-exercise-4.md) | [Exercise 6 →](chapter-2-exercise-6.md)
+[Next: Exercise 6](chapter-2-exercise-6.md)

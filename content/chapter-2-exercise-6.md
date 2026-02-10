@@ -2,7 +2,7 @@
 title: "2.6 Exercise 6: Managing the AXI Timer (Interrupts)"
 ---
 
-[← Back to Exercise 5](chapter-2-exercise-5.md) | [Back to Chapter 2 →](chapter-2-baremetal.md)
+[Previous: Exercise 5](chapter-2-exercise-5.md)
 
 <script src="./static/step-navigation.js"></script>
 
@@ -345,4 +345,4 @@ Monitor the console for:
 
 ---
 
-[← Exercise 5](chapter-2-exercise-5.md) | [Back to Chapter 2 →](chapter-2-baremetal.md)
+[Back to Chapter 1](chapter-2-baremetal.md)
