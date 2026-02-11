@@ -2,10 +2,18 @@
 title: "3.11 Exercise 11: Event Groups or Flags"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 10](chapter-3-exercise-10.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 11. Event Groups or Flags.
-This time we create an example of use of Flag Groups in FreeRTOS by including some
+This time we create an example of use of Flag Groups in Free RTOS by including some
 code lines in the previous ISR semaphore example.
 When the user presses all 5 buttons, a message will appear indicating that the event
 group has been used. Meanwhile, if all 5 buttons have not been pressed yet, another
@@ -34,7 +42,10 @@ This read the BTN from GPIO and set the bits corresponding to BTN in the event
 group, allowing unblock the high priority task waiting.
 @Marcos Martínez Peiró, Feb 25. Pag 90
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 Step 4. Modify the Semaphore task.
 First write the type:
@@ -62,3 +73,19 @@ send a message, if some button is pressed but not all the five another message i
 displayed, finally if all the buttons have been pressed the final message is displayed
 and the event group is cleared to start the play again.
 @Marcos Martínez Peiró, Feb 25. Pag 91
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 12](chapter-3-exercise-12.md)

@@ -2,7 +2,15 @@
 title: "3.8 Exercise 8: Queues with struct message sending"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 7](chapter-3-exercise-7.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 8. Queues with struct message sending.
 Now we're going to create two queues, one with a struct message and a size
@@ -42,7 +50,10 @@ xStructQueue = xQueueCreate(
 10,
 @Marcos Martínez Peiró, Feb 25. Pag 78
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 /* Size of each item is big enough to hold the<br /> whole structure. */
 sizeof( xMessage ) );
@@ -84,7 +95,10 @@ xil_printf("%s: %s\n", params->taskName, params->message);
 struct AMessage *pxPointerToxMessage;
 @Marcos Martínez Peiró, Feb 25. Pag 79
 
----
+</div>
+
+<div class="step" data-step="3">
+<h2>Step 3</h2>
 
 /* Send the entire structure to the queue created to hold 10 structures. */
 xStatus=xQueueSend( /* The handle of the queue. */
@@ -124,7 +138,10 @@ vTaskDelay(params->delay);
 }
 @Marcos Martínez Peiró, Feb 25. Pag 80
 
----
+</div>
+
+<div class="step" data-step="4">
+<h2>Step 4</h2>
 
 Step 5: Task Receiver2.
 void vReceiver2Task( void *pvParameters )
@@ -170,12 +187,8 @@ if( xPointerQueue != NULL )
 /* Receive a message from the created queue to hold pointers. Block for
 10
 ticks if a message is not immediately available. The value is read into a
-@Marcos Martínez Peiró, Feb 25. Pag 81
-
----
 
 ![](img/page_083_img_01.jpeg)
-
 
 pointer variable, and as the value received is the address of the
 xMessage
@@ -199,3 +212,19 @@ xil_printf("\n");
 vTaskDelay(params->delay);
 }
 }
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">4</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 9](chapter-3-exercise-9.md)

@@ -2,7 +2,15 @@
 title: "3.10 Exercise 10: Semaphores from ISR and Mutexes"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 9](chapter-3-exercise-9.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 ![](img/page_084_img_01.jpeg)
 
@@ -21,7 +29,7 @@ Step 1. Comment the previous created tasks or exercises.
 As alternative you can create a new application on the same Platform.
 Step 2. Include libraries.
 To manage the interruptions from interrupt controller and Microblaze processor you
-must add new libraries. Also, the semaphore needs their own libraries in FreeRTOS.
+must add new libraries. Also, the semaphore needs their own libraries in Free RTOS.
 #include "xil_exception.h"
 #include "xinterrupt_wrap.h"
 #include "semphr.h"
@@ -35,12 +43,14 @@ Don’t forget maintaining previous created libraries:
 #include "queue.h"
 @Marcos Martínez Peiró, Feb 25. Pag 83
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 ![](img/page_085_img_01.jpeg)
 
 ![](img/page_085_img_02.jpeg)
-
 
 Step 3. Definitions, types and prototype functions.
 To create the ISR and semaphore example you create next code.
@@ -67,7 +77,10 @@ Located in the file xparameters.h that represents the memory map of our hardware
 architecture.
 @Marcos Martínez Peiró, Feb 25. Pag 84
 
----
+</div>
+
+<div class="step" data-step="3">
+<h2>Step 3</h2>
 
 BTN_CHANNEL is the channel associated with GPIO AXI module.
 Step 4. Task parameters and prototype function.
@@ -91,7 +104,10 @@ XGpio_SetDataDirection(&Gpio_btn,BTN_CHANNEL,0x1F);
 XGpio_InterruptEnable(&Gpio_btn, BUTTON_INTERRUPT);
 @Marcos Martínez Peiró, Feb 25. Pag 85
 
----
+</div>
+
+<div class="step" data-step="4">
+<h2>Step 4</h2>
 
 XGpio_InterruptGlobalEnable(&Gpio_btn);
 /*Initialize interrupts from BTN*/
@@ -134,7 +150,10 @@ b) The direction of the 5 BTN (0x1F) as inputs by using
 xGpio_SetDataDirection().
 @Marcos Martínez Peiró, Feb 25. Pag 86
 
----
+</div>
+
+<div class="step" data-step="5">
+<h2>Step 5</h2>
 
 c) Enable the BTN GPIO as hardware interruptions for the overall
 system. XGpio_InterruptEnable() and XGpio_GlobalEnable().
@@ -177,7 +196,10 @@ xISRTime = xTaskGetTickCountFromISR();
 //xil_printf("Previous tick in ISR: %d\n", xLastISRTime);
 @Marcos Martínez Peiró, Feb 25. Pag 87
 
----
+</div>
+
+<div class="step" data-step="6">
+<h2>Step 6</h2>
 
 /* Clear the Interrupt */
 u32 Register;
@@ -214,7 +236,10 @@ the value has been selected as 20 ticks.
 3. Switch Context. Activation of the blocked task with higher priority.
 @Marcos Martínez Peiró, Feb 25. Pag 88
 
----
+</div>
+
+<div class="step" data-step="7">
+<h2>Step 7</h2>
 
 Step 7. Creation of the Task that waits for the semaphore.
 The code of the task is:
@@ -240,3 +265,19 @@ When the task takes the semaphore then prints out the value of the BTN pressed. 
 the interruption is faster than our finger push and release, the BTN could be read in
 the task better than the ISR.
 @Marcos Martínez Peiró, Feb 25. Pag 89
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">7</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 11](chapter-3-exercise-11.md)

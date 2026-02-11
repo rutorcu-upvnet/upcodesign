@@ -2,12 +2,20 @@
 title: "3.12 Exercise 12: Software Timers"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 11](chapter-3-exercise-11.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 12. Software Timers
 This time a software timer will be created to add functionality to the previous
 example.
-A FreeRTOS software timer is created to toggle on the led 0 every second.
+A Free RTOS software timer is created to toggle on the led 0 every second.
 To add some fun functionality the BTN control the timer:
 a) BTN 1 (UP) Toggle every 2 sec.
 b) BTN 2 (RIGHT) Restart Timer running at 1 sec.
@@ -41,7 +49,10 @@ else
 {
 @Marcos Martínez Peiró, Feb 25. Pag 92
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 xil_printf("Timer created\n");
 }
@@ -80,3 +91,19 @@ XGpio_DiscreteWrite(&Gpio_sw_led, LED_CHANNEL, ledState);
 xil_printf("Timer callback\n");
 }
 @Marcos Martínez Peiró, Feb 25. Pag 93
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 13](chapter-3-exercise-13.md)

@@ -2,7 +2,15 @@
 title: "3.7 Exercise 7: Queues"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 6](chapter-3-exercise-6.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 7. Queues.
 First don’t create the previous Tasks to “clean” the serial terminal: comment
@@ -39,7 +47,10 @@ Step 5. Types for the Queue
 //types for queue example
 @Marcos Martínez Peiró, Feb 25. Pag 74
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 QueueHandle_t xQueue = NULL;
 Step 6. Task Handlers (optional).
@@ -68,7 +79,10 @@ xil_printf( "Could not create queue\n" );
 }
 @Marcos Martínez Peiró, Feb 25. Pag 75
 
----
+</div>
+
+<div class="step" data-step="3">
+<h2>Step 3</h2>
 
 Step 8. Body of senders’ tasks.
 void vSenderTask( void *pvParameters )
@@ -102,7 +116,10 @@ vTaskDelay(params->delay);
 }
 @Marcos Martínez Peiró, Feb 25. Pag 76
 
----
+</div>
+
+<div class="step" data-step="4">
+<h2>Step 4</h2>
 
 Step 9. Body of the receiver task.
 void vReceiverTask( void *pvParameters )
@@ -149,3 +166,19 @@ vTaskDelay(params->delay);
 }
 }
 @Marcos Martínez Peiró, Feb 25. Pag 77
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">4</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 8](chapter-3-exercise-8.md)

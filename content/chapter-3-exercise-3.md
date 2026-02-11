@@ -2,7 +2,15 @@
 title: "3.3 Exercise 3: Parameters and TaskControl: Delete Tasks"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 2](chapter-3-exercise-2.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 3: Parameters and TaskControl: Delete Tasks.
 Create parameters in previous tasks using parameter passing.
@@ -46,3 +54,19 @@ xTask4Handle = NULL;
 Check your usage on the serial terminal.
 Have you been able to delete high-priority tasks from a lower-priority one?
 @Marcos Martínez Peiró, Feb 25. Pag 69
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">1</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 4](chapter-3-exercise-4.md)

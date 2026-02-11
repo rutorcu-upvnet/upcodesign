@@ -2,7 +2,15 @@
 title: "3.14 Exercise 14: Task Notifications"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 13](chapter-3-exercise-13.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 14. Task Notifications
 A direct to task notification is an event sent directly to a task, rather than indirectly
@@ -31,7 +39,10 @@ xil_printf("WorkerTask: Notificación recibida, ejecutando tarea...\n");
 }
 @Marcos Martínez Peiró, Feb 25. Pag 94
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 Step 2. StartUp Task.
 Include next code in the startup task and check the result on terminal.
@@ -52,3 +63,19 @@ xil_printf("Timer created\n");
 // Start the timer
 xTimerStart(xTimer, 0);
 @Marcos Martínez Peiró, Feb 25. Pag 95
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 15](chapter-3-exercise-15.md)

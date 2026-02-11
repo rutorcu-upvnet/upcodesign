@@ -2,7 +2,15 @@
 title: "3.4 Exercise 4: Use of LEDS. Duration of Tasks"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 3](chapter-3-exercise-3.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 4: Use of LEDS. Duration of Tasks.
 Light ON a LED when task i starts, turn o(cid:431) LED i when task finishes execution
@@ -21,28 +29,31 @@ vTaskDelay(params->delay);
 }
 What does the flashing of the LEDs indicate?
 NOTE:
-In FreeRTOS, certain Xilinx features, especially those related to hardware and peripheral
+In Free RTOS, certain Xilinx features, especially those related to hardware and peripheral
 drivers (such as XUartPs_Send, XGpio_DiscreteWrite, XScuGic_Connect, etc.), may not
 work properly within main() due to several reasons:
 1. There is not a scheduler.
-In FreeRTOS, main() runs before the scheduler (vTaskStartScheduler()) starts.
+In Free RTOS, main() runs before the scheduler (vTaskStartScheduler()) starts.
 Some Xilinx functions may depend on interrupts or the state of the operating
 system to run properly.
 When you call these functions within main(), there is still no proper task context,
 which can cause them to fail.
 2. No task context
-In FreeRTOS, each task has its own stack and execution context. Some Xilinx
+In Free RTOS, each task has its own stack and execution context. Some Xilinx
 functions may need access to context variables that are not available if called
 from main(), before the scheduler starts.
 3. Interrupts may not be enabled
 Some features of Xilinx controllers require interrupts to be turned on. If you call
-them on main() before FreeRTOS enables interrupts, they may not run correctly.
+them on main() before Free RTOS enables interrupts, they may not run correctly.
 4. System Initializer Conflicts
 main() can run in a state where certain peripherals are not yet fully initialized.
 Instead, when used within a task, the hardware is already configured correctly.
 @Marcos Martínez Peiró, Feb 25. Pag 70
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 How to fix the problem?
 If you need to call these functions, do so within a task. For example:
@@ -84,3 +95,19 @@ XGpio Gpio_sw_led; /* The Instance of the GPIO Driver */
 #define SW_CHANNEL 1
 #define LED_CHANNEL 2
 @Marcos Martínez Peiró, Feb 25. Pag 71
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 5](chapter-3-exercise-5.md)

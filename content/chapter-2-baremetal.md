@@ -8,7 +8,7 @@ title: "2. BareMetal Software Development for MicroBlaze"
 
 One thing a programmer needs to know is the web pages than can be useful to read, study or copy examples to learn about the AMD products and embedded software applications. The officials from AMD are:
 
-BareMetal
+`BareMetal`
 
 https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841745/Baremetal+Drivers+and+Libraries
 
@@ -16,7 +16,7 @@ Specific driver for a peripheral implementation the link moves to Xilinx (AMD) g
 
 https://github.com/Xilinx/embeddedsw/tree/master/XilinxProcessorIPLib/drivers
 
-FreeRTOS
+`Free RTOS`
 
 https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842141/FreeRTOS
 
@@ -28,7 +28,7 @@ Drivers for Intellectual Properties (IPs)
 
 https://www.xilinx.com/products/intellectual-property.html
 
-In case to look for GPIO:
+In case to look for `GPIO`
 
 https://www.xilinx.com/products/intellectual-property/nav-interface-interconnect/nav-axi-infrastructure.html
 

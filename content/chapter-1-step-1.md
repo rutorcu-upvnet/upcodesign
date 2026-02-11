@@ -5,71 +5,7 @@ title: "1.1 New Project Wizard"
 [Back to Chapter 1](chapter-1-architecture.md)
 
 <script src="./static/step-navigation.js"></script>
-
-<style>
-.step-container {
-  max-width: 800px;
-  margin: 2rem auto;
-}
-
-.step {
-  display: none;
-  padding: 2rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  background-color: var(--light);
-}
-
-.step.active {
-  display: block;
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.step h2 {
-  margin-top: 0;
-  color: var(--secondary);
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-button {
-  padding: 0.7rem 1.5rem;
-  background-color: var(--secondary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s;
-}
-
-button:hover:not(:disabled) {
-  background-color: var(--tertiary);
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.step-indicator {
-  text-align: center;
-  font-weight: bold;
-  color: var(--darkgray);
-}
-</style>
+<link rel="stylesheet" href="./static/step-navigation.css" />
 
 <div class="step-container">
 

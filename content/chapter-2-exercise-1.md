@@ -5,109 +5,28 @@ title: "2.1 Exercise 1: Hello MicroBlaze"
 [Back to Chapter 2](chapter-2-baremetal.md)
 
 <script src="./static/step-navigation.js"></script>
-
-<style>
-.step-container {
-  max-width: 800px;
-  margin: 2rem auto;
-}
-
-.step {
-  display: none;
-  padding: 2rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  background-color: var(--light);
-}
-
-.step.active {
-  display: block;
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.step h2 {
-  margin-top: 0;
-  color: var(--secondary);
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-button {
-  padding: 0.7rem 1.5rem;
-  background-color: var(--secondary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s;
-}
-
-button:hover:not(:disabled) {
-  background-color: var(--tertiary);
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.step-indicator {
-  text-align: center;
-  font-weight: bold;
-  color: var(--darkgray);
-}
-
-.objectives {
-  background-color: var(--highlight);
-  padding: 1rem;
-  border-left: 4px solid var(--secondary);
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
-}
-
-.objectives h3 {
-  margin-top: 0;
-}
-
-.objectives ul {
-  margin-bottom: 0;
-}
-</style>
+<link rel="stylesheet" href="./static/step-navigation.css" />
 
 <div class="step-container">
 <div class="step active" data-step="1">
 <h2>Overview: Hello MicroBlaze</h2>
 
-> ### Objectives
+> [!note] Objectives
 >
 > Familiarize yourself with the Vitis environment, programming, and debugging<br>
 > Understand the system startup process in `main()`<br>
-> Learn about important libraries for BareMetal development<br>
+> Learn about important libraries for `BareMetal` development<br>
 
-This exercise guides you through creating your first BareMetal application on the MicroBlaze processor. You will:
-- Create a Vitis platform based on your Vivado hardware design
-- Create a Hello World application
+This exercise guides you through creating your first `BareMetal` application on the `MicroBlaze` processor. You will:
+- Create a `Vitis` platform based on your Vivado hardware design
+- Create a `Hello World` application
 - Optimize the code by removing unnecessary libraries
 - Build and test the application
 
-> [!warning] **Prerequisites** 
-> Complete Chapter 1 to generate the hardware architecture and bitstream
+> [!warning] Prerequisites
+> Complete [Chapter 1](chapter-1-architecture.md) to generate the hardware architecture and bitstream
 
-> [!info] **Useful Resources**
->
+> [!info] Useful Resources
 > [Xilinx BareMetal Drivers and Libraries](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841745/Baremetal+Drivers+and+Libraries)<br>
 > [Xilinx Embedded Software Drivers](https://github.com/Xilinx/embeddedsw/tree/master/XilinxProcessorIPLib/drivers)<br>
 > [Xilinx FPGA Wiki](https://xilinx-wiki.atlassian.net/wiki/spaces/A/overview)<br>
@@ -159,7 +78,7 @@ Select `Operative System` as `Stand Alone`, select `MicroBlaze` from available p
 <div class="step" data-step="6">
 <h2>Build the Platform</h2>
 
-Once the platform configuration is complete double click in `Build`at the `Flow` tab of the main window. The build process creates the BSP (Board Support Package) with drivers connecting peripherals to MicroBlaze
+Once the platform configuration is complete, click in `Build` at the `Flow` tab of the main window. The build process creates the BSP (Board Support Package) with drivers connecting peripherals to MicroBlaze
 
 ![Building the platform](img/figure_0060.png)
 
@@ -189,7 +108,7 @@ Configure the platform I/O settings for console communication. Select the availa
 <div class="step" data-step="9">
 <h2>Configure Timers</h2>
 
-Configure timing services for the platform. Set up `sleep timer` for delay functions with `axi_timer_0`. Set up `tick timer` for system timing services with `axi_timer_1` (used by FreeRTOS later).
+Configure timing services for the platform. Set up `sleep timer` for delay functions with `axi_timer_0`. Set up `tick timer` for system timing services with `axi_timer_1` (used by Free RTOS later).
 
 ![Sleep timer and tick timer configuration](img/figure_0063.png)
 
@@ -209,7 +128,7 @@ Once the platform is created, you can now develop applications. Open Vitis envir
 <div class="step" data-step="11">
 <h2>Select Hello World Application</h2>
 
-> [!warning] The starting point consider that you have already created a `Platform`.
+> [!warning] The starting point consider that you have already created a `Platform`
 
 Select `Hello World` application and `Create Application Component from Template`
 
@@ -295,7 +214,7 @@ int main()
 }
 ```
 
-> [!info]
+> [!info] 
 >
 > - Removing `stdio.h` reduces code size significantly<br>
 > - Removing `platform.h` eliminates initialization overhead if not needed<br>
@@ -376,7 +295,7 @@ Hello World, successfully ran number 3
 ...
 ```
 
-> [!info] If your hardware does not contain an `AXI Timer`, the timer used is the inner `MicroBlaze` timer. The time response of the `sleep()` function is highly dependent of the `MicroBlaze` frequency operation from your Vivado Design.
+> [!info] If your hardware does not contain an `AXI Timer`, the timer used is the inner `MicroBlaze` timer. The time response of the `sleep()` function is highly dependent of the `MicroBlaze` frequency operation from your Vivado Design
 
 </div>
 <div class="step" data-step="22">
@@ -400,12 +319,12 @@ xil_printf(): Much more compact and eƯicient in terms of memory usage because i
 printf(): Requires stdout to be redirected to UART, which may need additional configuration. 
 xil_printf(): Already optimized to send data directly to UART in Xilinx embedded systems.
 
-[!info] When to Use Each?
-- If you need efficiency and smaller code size, use xil_printf().
-- If you need advanced formatting (such as floating point support), use printf(), but be aware of the higher resource consumption.
-- In MicroBlaze-based embedded systems, xil_printf() is generally recommended unless you specifically require the advanced formatting features of printf().
+[!question] When to Use Each?
+- If you need efficiency and smaller code size, use xil_printf()
+- If you need advanced formatting (such as floating point support), use printf(), but be aware of the higher resource consumption
+- In MicroBlaze-based embedded systems, xil_printf() is generally recommended unless you specifically require the advanced formatting features of printf()
 
-[!Attention] If VIVADO JTAG is still connected to the board as Target Connected some issues could appear if VITIS try to program the board. You must select one of the two options: VITIS or VIVADO to program your FPGA. If you will program without modify your architecture better to program from VITIS so disconnect previously the Hardware Platform from Vivado.
+[!attention] If `VIVADO` JTAG is still connected to the board as Target Connected some issues could appear if `VITIS` try to program the board. You must select one of the two options: `VITIS` or `VIVADO` to program your FPGA. If you will program without modify your architecture better to program from `VITIS` so disconnect previously the Hardware Platform from Vivado
 
 </div>
 <div class="navigation">

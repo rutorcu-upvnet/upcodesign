@@ -2,7 +2,15 @@
 title: "3.15 Exercise 15: Stream Buffers"
 ---
 
-[Back to Chapter 3](chapter-3-freertos.md)
+[Previous: Exercise 14](chapter-3-exercise-14.md)
+
+<script src="./static/step-navigation.js"></script>
+<link rel="stylesheet" href="./static/step-navigation.css" />
+
+<div class="step-container">
+
+<div class="step active" data-step="1">
+<h2>Step 1</h2>
 
 Exercise 15. Stream Bu(cid:431)ers
 A producer task send message. A consumer task receives the message.
@@ -33,7 +41,10 @@ xTaskCreate(ProducerTask, "Producer", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 xTaskCreate(ConsumerTask, "Consumer", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 @Marcos Martínez Peiró, Feb 25. Pag 96
 
----
+</div>
+
+<div class="step" data-step="2">
+<h2>Step 2</h2>
 
 Step 4. Producer and consumer tasks.
 void ProducerTask(void *pvParameters) {
@@ -65,3 +76,19 @@ vTaskDelay(pdMS_TO_TICKS(500));
 }
 Change the value RECEIVE_SIZE_1 to RECEIVE_SIZE_2 and analyse the results.
 @Marcos Martínez Peiró, Feb 25. Pag 97
+
+</div>
+
+<div class="navigation">
+	<button id="prevBtn">Previous</button>
+	<div class="step-indicator">
+		<span><span id="currentStep">1</span> of <span id="totalSteps">2</span></span>
+	</div>
+	<button id="nextBtn">Next</button>
+</div>
+
+</div>
+
+---
+
+[Next: Exercise 16](chapter-3-exercise-16.md)

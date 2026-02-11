@@ -46,9 +46,9 @@ title: "Firmware Development in Embedded Systems"
 - Exercise 5: [Managing the AXI Timer](chapter-2-exercise-5.md) (Polling)
 - Exercise 6: [Managing the AXI Timer](chapter-2-exercise-6.md) (Interrupt)
 
-### [Chapter 3: FreeRTOS on AMD Kintex7 FPGA](chapter-3-freertos.md)
+### [Chapter 3: Free RTOS on AMD Kintex7 FPGA](chapter-3-freertos.md)
 
-- Exercise 1: [Creating a project with FreeRTOS](chapter-3-exercise-1.md)
+- Exercise 1: [Creating a project with Free RTOS](chapter-3-exercise-1.md)
 - Exercise 2: [Creating Threads (Tasks)](chapter-3-exercise-2.md)
 - Exercise 3: [Parameters and TaskControl: Delete Tasks](chapter-3-exercise-3.md)
 - Exercise 4: [Use of LEDS. Duration of Tasks](chapter-3-exercise-4.md)
