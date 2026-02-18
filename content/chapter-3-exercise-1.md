@@ -25,7 +25,7 @@ This exercise guides you through creating your first `Free RTOS` application on 
 <div class="step" data-step="2">
 <h2>Open Vitis and Create a Platform</h2>
 
-Open the Vitis IDE and select `File`/`New Component`/`Platform`
+- Open the Vitis IDE and select `File`/`New Component`/`Platform`
 
 ![Creating a new platform in Vitis IDE](img/figure_0078.png)
 
@@ -35,7 +35,7 @@ Open the Vitis IDE and select `File`/`New Component`/`Platform`
 <div class="step" data-step="3">
 <h2>Specify the platform name</h2>
 
-Specify the platform name `genesys2_freertos_microblaze`
+- Specify the platform name `genesys2_freertos_microblaze`
 
 ![Specify platform name](img/figure_0079.png)
 
@@ -45,7 +45,7 @@ Specify the platform name `genesys2_freertos_microblaze`
 <div class="step" data-step="4">
 <h2>Select the XSA file</h2>
 
-Select `Hardware Design` and browse the XSA file created from Vivado
+- Select `Hardware Design` and browse the XSA file created from Vivado
 
 ![Select the XSA file](img/figure_0080.png)
 
@@ -57,7 +57,7 @@ Select `Hardware Design` and browse the XSA file created from Vivado
 <div class="step" data-step="5">
 <h2>Configure Operating System</h2>
 
-Select `Operative System` as `freertos`, select `MicroBlaze` from available processor options and finish the process
+- Select `Operative System` as `freertos`, select `MicroBlaze` from available processor options and finish the process
 
 ![Select Free RTOS](img/figure_0081.png)
 
@@ -67,7 +67,7 @@ Select `Operative System` as `freertos`, select `MicroBlaze` from available proc
 <div class="step" data-step="6">
 <h2>Build the Platform</h2>
 
-Once the platform configuration is complete, click in `Build` at the `Flow` tab of the main window
+- Once the platform configuration is complete, click in `Build` at the `Flow` tab of the main window
 
 ![Building the platform](img/figure_0082.png)
 
@@ -77,7 +77,7 @@ Once the platform configuration is complete, click in `Build` at the `Flow` tab 
 <div class="step" data-step="7">
 <h2>Check Free RTOS options</h2>
 
-View settings by selecting the gear icon in the `Flow` tab or select your platform `genesys2_freertos_microblaze`/`Settings`/`vitis-comp.json`. Select `freertos microblaze`/`Board Support Package`/`freertos` and check different parameters. 
+- View settings by selecting the gear icon in the `Flow` tab or select your platform `genesys2_freertos_microblaze`/`Settings`/`vitis-comp.json`. Select `freertos microblaze`/`Board Support Package`/`freertos` and check different parameters. 
 
 ![Free RTOS parameters](img/figure_0083.png)
 
@@ -94,7 +94,7 @@ View settings by selecting the gear icon in the `Flow` tab or select your platfo
 <div class="step" data-step="8">
 <h2>Configure Timers</h2>
 
-Select `xiltimer` and configure timing services for the platform. Set up `sleep timer` for delay functions with `axi_timer_0`. Set up `tick timer` for system timing services with `axi_timer_1`.
+- Select `xiltimer` and configure timing services for the platform. Set up `sleep timer` for delay functions with `axi_timer_0`. Set up `tick timer` for system timing services with `axi_timer_1`.
 
 ![Sleep timer and tick timer configuration](img/figure_0084.png)
 

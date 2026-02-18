@@ -103,6 +103,7 @@ their operation
 <center><em>Figure 83. Free RTOS parameters.</em></center><br>
 
 >[!warning] Build and check your application
+
 >[!error] Take a while to understand what is happening
 
 - Restore the tasks priorities and set `Time Slicing` to `true`

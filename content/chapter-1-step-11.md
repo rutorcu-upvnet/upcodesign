@@ -34,7 +34,7 @@ Save the Project. There are many options to save it. Go to `File` > `Project` > 
 
 TCL scripts are available. Select a name for your project and archive it. Check `Include run results` to accelerate further compilations.
 
-![Archive Project Options](img/figure_0041.jpeg)
+![Archive Project Options](img/figure_0041.png)
 
 <center><em>Figure 41. Archive Project Options.</em></center><br>
 </div>

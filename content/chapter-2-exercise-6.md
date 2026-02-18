@@ -17,7 +17,7 @@ title: "2.6 Exercise 6: Managing the AXI Timer (Interrupts)"
 > Implement a timer interrupt service routine (ISR)<br>
 > Generate periodic interrupts for precise timing events<br>
 
-In contrast to polling mode (Exercise 5), interrupt mode allows the timer to automatically generate interrupts when it reaches a compare value. This is more efficient and precise for time-critical applications.
+In contrast to polling mode ([Exercise 5](chapter-2-exercise-5.md)), interrupt mode allows the timer to automatically generate interrupts when it reaches a compare value. This is more efficient and precise for time-critical applications.
 
 **Timer Interrupt Features:**
 - Compare mode: Interrupt when counter reaches compare value
@@ -60,22 +60,19 @@ Define timer constants and create a global ISR flag:
 #define XTMRCTR_BASEADDRESS XPAR_XTMRCTR_1_BASEADDR
 #define TIMER_COUNTER_0 0
 #define TIMER_COUNTER_1 1
-#define TIMER_COUNTER_VALUE 0xFFFFFFFF
+
+#define RESET_VALUE 0xD0000000 // 800Mticks aprox
 
 /* Global variables */
-XTmrCtr TimerCounter;
-XGpio Gpio_sw_led;
-volatile int TimerInterruptFlag = 0;  // Set by ISR
-static int InterruptCount = 0;        // Count interrupts
+XTmrCtr TimerCounter; /* The instance of the Tmrctr 1 Device */
 
-#define SW_CHANNEL 1
-#define LED_CHANNEL 2
+static volatile int TimerExpired;
+static volatile int LastTimerExpired; 
 ```
 
-> [!info] Volatile Flag
+> [!info] Flags
 >
-> The `volatile` keyword prevents the compiler from optimizing away the flag check
-> since it can change asynchronously in the ISR
+> The `volatile` keyword prevents the compiler from optimizing away the flag check since it can change asynchronously in the ISR. The `static`keyword allows to keep the variable value in consecutive function calls.
 
 </div>
 <div class="step" data-step="4">
@@ -84,27 +81,22 @@ static int InterruptCount = 0;        // Count interrupts
 Define the ISR function that executes when timer interrupt occurs:
 
 ```c
-void TimerInterruptHandler(void *CallBackRef)
+void TimerCounterHandler(void *CallBackRef, u8 TmrCtrNumber)
 {
     XTmrCtr *InstancePtr = (XTmrCtr *)CallBackRef;
-    
-    /* Check if Timer Counter 0 generated the interrupt */
-    if (XTmrCtr_IsExpired(InstancePtr, TIMER_COUNTER_0)) {
-        /* Toggle LEDs */
-        static u8 LedState = 0;
-        XGpio_DiscreteWrite(&Gpio_sw_led, LED_CHANNEL, LedState);
-        LedState = (LedState == 0xFF) ? 0x00 : 0xFF;
-        
-        /* Increment counter */
-        InterruptCount++;
-        
-        /* Print interrupt information */
-        xil_printf("Timer Interrupt %d occurred\r\n", InterruptCount);
-        
-        /* Set flag */
-        TimerInterruptFlag = 1;
+    /*
+    * Check if the timer counter has expired, checking is not necessary
+    * since that's the reason this function is executed, this just shows
+    * how the callback reference can be used as a pointer to the instance
+    * of the timer counter that expired, increment a shared variable so
+    * the main thread of execution can see the timer expired
+    */
+    if (XTmrCtr_IsExpired(InstancePtr, TmrCtrNumber)) {
+        TimerExpired++;
+        //xil_printf("Timer expired %d times\n\r", TimerExpired);
     }
-}
+} 
+
 ```
 
 > [!warning] ISR Guidelines
@@ -118,97 +110,125 @@ void TimerInterruptHandler(void *CallBackRef)
 <div class="step" data-step="5">
 <h2>Initialize Interrupt System and Timer</h2>
 
-Configure the interrupt controller and timer in `main()`:
-
+Configure the interrupt controller and timer in `main()`, calling the `TmrCtrIntrExample_Init` function:
 ```c
 int Status;
 
-/* Initialize GPIO */
-Status = XGpio_Initialize(&Gpio_sw_led, XPAR_AXI_GPIO_0_BASEADDR);
+Status = TmrCtrIntrExample_Init(&TimerCounter, XTMRCTR_BASEADDRESS);
 if (Status != XST_SUCCESS) {
-    xil_printf("GPIO Init Failed\r\n");
+    xil_printf("Tmrctr 1 interrupt Example Initialization Failed\r\n");
     return XST_FAILURE;
+} else {
+    xil_printf("Tmrctr 1 interrupt Example Initialization Success\r\n");
 }
-XGpio_SetDataDirection(&Gpio_sw_led, SW_CHANNEL, 0x0000FFFF);
-XGpio_SetDataDirection(&Gpio_sw_led, LED_CHANNEL, 0x00);
+```
 
-/* Initialize Timer Counter */
-Status = XTmrCtr_Initialize(&TimerCounter, XTMRCTR_BASEADDRESS);
-if (Status != XST_SUCCESS) {
-    xil_printf("Timer Init Failed\r\n");
-    return XST_FAILURE;
-}
+```c
+int TmrCtrIntrExample_Init(XTmrCtr *TmrCtrInstancePtr, UINTPTR BaseAddr) 
+{
+    int Status;
+    u8 TmrCtrNumber = TIMER_COUNTER_1;
+    /*
+    * Initialize the timer counter so that it's ready to use,
+    * specify the device ID that is generated in xparameters.h
+    */
 
-/* Perform timer self-test */
-Status = XTmrCtr_SelfTest(&TimerCounter, TIMER_COUNTER_0);
-if (Status != XST_SUCCESS) {
-    xil_printf("Timer Self-Test Failed\r\n");
-    return XST_FAILURE;
-}
+    Status = XTmrCtr_Initialize(TmrCtrInstancePtr, BaseAddr);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    /*
+    * Perform a self-test to ensure that the hardware was built
+    * correctly
+    */
+    Status = XTmrCtr_SelfTest(TmrCtrInstancePtr, TmrCtrNumber);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    /*
+    * Connect the timer counter to the interrupt subsystem such that
+    * interrupts can occur.
+    */
+    Status = XSetupInterruptSystem(TmrCtrInstancePtr,
+        (XInterruptHandler)XTmrCtr_InterruptHandler, \
+        TmrCtrInstancePtr->Config.IntrId, \
+        TmrCtrInstancePtr->Config.IntrParent, \
+        XINTERRUPT_DEFAULT_PRIORITY);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    /*
+    * Setup the handler for the timer counter that will be called from the
+    * interrupt context when the timer expires, specify a pointer to the
+    * timer counter driver instance as the callback reference so the
+    * handler is able to access the instance data
+    */
+    XTmrCtr_SetHandler(TmrCtrInstancePtr, TimerCounterHandler, TmrCtrInstancePtr);
+    /*
+    * Enable the interrupt of the timer counter so interrupts will occur
+    * and use auto reload mode such that the timer counter will reload
+    * itself automatically and continue repeatedly, without this option
+    * it would expire once only
+    */
+    XTmrCtr_SetOptions(TmrCtrInstancePtr, TmrCtrNumber, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
+    /*
+    * Set a reset value for the timer counter such that it will expire
+    * earlier than letting it roll over from 0, the reset value is loaded
+    * into the timer counter when it is started
+    */
+    XTmrCtr_SetResetValue(TmrCtrInstancePtr, TmrCtrNumber, RESET_VALUE);
+    /*
+    * Start the timer counter such that it's incrementing by default,
+    * then wait for it to timeout a number of times
+    */
+    XTmrCtr_Start(TmrCtrInstancePtr, TmrCtrNumber);
 
-xil_printf("Timer Initialized Successfully\r\n");
+    TimerExpired = 0;
+    LastTimerExpired = 0;
+
+    return XST_SUCCESS;
+} 
 ```
 
 </div>
 <div class="step" data-step="6">
-<h2>Configure Timer for Interrupt Mode</h2>
-
-Set timer options for automatic interrupts and connect the ISR:
-
-```c
-u8 TmrCtrNumber = TIMER_COUNTER_0;
-
-/* Set timer initial value */
-XTmrCtr_SetResetValue(&TimerCounter, TmrCtrNumber, TIMER_COUNTER_VALUE);
-
-/* Enable autoreload, down-count, and interrupt options */
-XTmrCtr_SetOptions(&TimerCounter, TmrCtrNumber,
-    XTC_AUTO_RELOAD_OPTION |    /* Auto-reload when counter expires */
-    XTC_DOWN_COUNT_OPTION |     /* Count down */
-    XTC_INT_MODE_OPTION);       /* Enable interrupt mode */
-
-/* Connect the interrupt handler to the timer */
-XTmrCtr_SetHandler(&TimerCounter, TimerInterruptHandler, &TimerCounter);
-
-/* Enable interrupts in the exception system */
-Xil_ExceptionEnable();
-
-/* Start the timer */
-XTmrCtr_Start(&TimerCounter, TmrCtrNumber);
-
-xil_printf("Timer configured for interrupt mode\r\n");
-```
-
-> [!info] Autoreload Mode
->
-> - With autoreload enabled, the counter resets to the initial value automatically
-> - This creates periodic interrupts at regular intervals
-> - Interrupt frequency depends on the counter reset value and system clock
-
-</div>
-<div class="step" data-step="7">
 <h2>Main Loop Processing</h2>
 
 In the main loop, check the interrupt flag and perform actions:
 
 ```c
-while(1) {
-    /* Wait for interrupt */
-    if (TimerInterruptFlag) {
-        /* Process interrupt */
-        xil_printf("Processing interrupt %d\r\n", InterruptCount);
-        
-        /* Read GPIO switches */
-        u32 SwitchValue = XGpio_DiscreteRead(&Gpio_sw_led, SW_CHANNEL);
-        xil_printf("Switch value: 0x%lX\r\n", (unsigned long) SwitchValue);
-        
-        /* Reset flag for next interrupt */
-        TimerInterruptFlag = 0;
-    }
-    
-    /* Optional: perform other work here */
-    usleep(1000);  /* Small delay to prevent busy waiting */
+/*
+* Run the Timer Counter - Interrupt example.
+*/
+Status = TmrCtrIntrExample(&TimerCounter);
+if (Status != XST_SUCCESS) {
+    xil_printf("Tmrctr 1 interrupt Example Failed\r\n");
+return XST_FAILURE;
 }
+xil_printf("Successfully ran Tmrctr 1 interrupt Example\r\n"); 
+```
+
+```c
+int TmrCtrIntrExample(XTmrCtr *TmrCtrInstancePtr)
+{
+    u8 TmrCtrNumber = TIMER_COUNTER_1;
+    /*
+    * Wait for the first timer counter to expire as indicated
+    * by the shared variable which the handler will increment
+    */
+    if (TimerExpired != LastTimerExpired) 
+    {
+        LastTimerExpired = TimerExpired;
+        xil_printf("Timer expired %d times\n\r", LastTimerExpired);
+    }
+    /*
+    * If it has expired a number of times, then stop the timer counter and stop this example 
+    */
+    if (TimerExpired == 3) {
+        XTmrCtr_Stop(TmrCtrInstancePtr, TmrCtrNumber); // Stop the timer counter
+    }
+    return XST_SUCCESS;
+} 
 ```
 
 > [!info] Interrupt-Driven Design
@@ -219,36 +239,25 @@ while(1) {
 > - Much more efficient than polling ([Exercise 5](chapter-2-exercise-5.md))
 
 </div>
-<div class="step" data-step="8">
+<div class="step" data-step="7">
 <h2>Compile and Debug</h2>
 
-Build and test the timer interrupt implementation:
+Build and test the timer interrupt implementation
 
-```bash
-# Build the project
-Build Application
-
-# Debug on Hardware
-Debug As → Launch on Hardware
-```
-
-**Expected Behavior:**
-- Timer generates interrupts at regular intervals
-- LED toggles on each interrupt
-- Console prints interrupt count and GPIO values
-- System responds to timer events automatically
+> [!note] Expected Behavior
+>
+> - `main()` prints out a message every second
+> - `AXI Timer` generates interrupts at regular intervals and sets a flag
+> - `TmrCtrIntrExample` function prints out a message when the flag is active with the interrupts count
 
 Monitor the console for:
 - Timer initialization messages
 - Periodic interrupt notifications
-- Switch readings
-- LED toggle confirmations
 
 > [!warning] Verification
 >
-> - Check that LEDs toggle automatically (not manually controlled)
 > - Verify interrupt count increases regularly
-> - Confirm console output matches LED toggle rate
+> - Confirm console output matches the number of interrupts
 > - Measure timer interval accuracy with external equipment if available
 
 </div>

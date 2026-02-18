@@ -188,14 +188,14 @@ Toggle LEDs using the timer for precise timing:
 ```c
 while(1) {
     /* Turn LEDs ON */
-    XGpio_DiscreteWrite(&Gpio_sw_led_timers, 2, 0xAA);
+    XGpio_DiscreteWrite(&Gpio_sw_led_timers, 2, 0xFF);
     xil_printf("LEDs ON\r\n");
     
     /* Wait 1 second */
     usleep(LED_DELAY);
     
     /* Turn LEDs OFF */
-    XGpio_DiscreteWrite(&Gpio_sw_led_timers, 2, 0x55);
+    XGpio_DiscreteWrite(&Gpio_sw_led_timers, 2, 0x00);
     xil_printf("LEDs OFF\r\n");
     
     Value1 = XTmrCtr_GetValue(&TimerCounter_0, TIMER_COUNTER_0);
