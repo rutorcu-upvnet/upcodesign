@@ -274,4 +274,4 @@ Monitor the console for:
 
 ---
 
-[Back to Chapter 1](chapter-2-baremetal.md)
+[Back to Chapter 2](chapter-2-baremetal.md)

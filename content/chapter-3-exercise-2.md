@@ -6,7 +6,6 @@ title: "3.2 Exercise 2: Creating Threads (Tasks)"
 
 <script src="./static/step-navigation.js"></script>
 <link rel="stylesheet" href="./static/step-navigation.css" />
-their operation. Assign priorities 3, 4, 5, and 6 to tasks 1, 2, 3, and 4
 
 <div class="step-container">
 
@@ -77,7 +76,7 @@ void vTask2(void *pvParameters)
 
 - Create two more tasks (`Task3` and `Task4`) with the same functionality, check
 their operation
-- Reassign priorities 3, 4, 5, and 6 to tasks 1, 2, 3, and 4 respectively
+- Reassign priorities 3, 4, 5 and 6 to tasks 1, 2, 3 and 4 respectively
 - Modify the period of `Task3` and `Task4` and shows their messages
 - Assign a period of 1.5 seconds to `Task3` and 3 secconds to `Task4`
 
