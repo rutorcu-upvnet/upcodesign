@@ -12,7 +12,7 @@ title: "1.12 Export the Hardware"
 <div class="step active" data-step="1">
 <h2>Export Hardware</h2>
 
-To program applications to run in the MicroBlaze architecture, a `XSA` file must be created. Select `File` > `Export` > `Export Hardware`. Select `Include bitstream` option and write a name for your architecture (mb_std_system).
+To program applications to run in the MicroBlaze architecture, an `XSA` file must be created. Select `File` > `Export` > `Export Hardware`. Select the `Include bitstream` option and write a name for your architecture (mb_std_system).
 
 ![Export hardware and include bitstream](img/figure_0042.png)
 

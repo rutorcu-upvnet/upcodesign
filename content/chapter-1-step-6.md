@@ -12,7 +12,7 @@ title: "1.6 Modifying Constraints File (Optional)"
 <div class="step active" data-step="1">
 <h2>Edit Constraints File</h2>
 
-Digilent constraints file represents all the pins connections available in the Genesys2 board. All the peripherals on the board are connected to the FPGA. Not all of them are connected in our design so comment all lines that do not contain `clock`, `UART`, `SW`, `LED` or `pushbuttons`.
+The Digilent constraints file represents all the pin connections available in the Genesys2 board. All the peripherals on the board are connected to the FPGA. Not all of them are connected in our design so comment all lines that do not contain `clock`, `UART`, `SW`, `LED` or `pushbuttons`.
 
 ![Edition of constraints file](img/figure_0029.png)
 

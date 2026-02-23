@@ -91,7 +91,7 @@ XGpio_SetDataDirection(&Gpio_btn, 1, 0xFFFFFFFF);
 <div class="step" data-step="5">
 <h2>Configure Interrupts</h2>
 
-Enable GPIO interrupts and connect the ISR. Enable global interrupt system (enable the `AXI Interrupt Controller`). An AXI Interrupt Controller is connected to `MicroBlaze` to manage different interrups. Enable the `AXI GPIO` BTN interrupt system. Read and write in the `GPIO` Interrupt Enable Register (IER) Register, setting a 1 to enable interrupts. Set Up the` Interrupt Controller` (INTC) system for `AXI GPIO` BTN. This Set Up
+Enable GPIO interrupts and connect the ISR. Enable global interrupt system (enable the `AXI Interrupt Controller`). An AXI Interrupt Controller is connected to `MicroBlaze` to manage different interrupts. Enable the `AXI GPIO` BTN interrupt system. Read and write in the `GPIO` Interrupt Enable Register (IER), setting a 1 to enable interrupts. Set up the `Interrupt Controller` (INTC) system for `AXI GPIO` BTN. This setup
 initializes and runs the INTC, connecting the `AXI GPIO` for BTN to the `MicroBlaze` Processor. Enable the `MicroBlaze` global interrupts. 
 
 ```c

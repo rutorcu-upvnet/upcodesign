@@ -55,7 +55,7 @@ TaskHandle_t xTask4Handle = NULL;
 <div class="step active" data-step="3">
 <h2>Creating tasks from structs</h2>
 
-- Create the tasks passing the parameters ans handlers
+- Create the tasks passing the parameters and handlers
 
 ```c
 xTaskCreate(vTask1, "Task 1", STACK_SIZE, &task1_parameters, 4, &xTask1Handle);

@@ -28,7 +28,7 @@ If all the modules and connections are OK, you will get a confirmation message.
 
 <center><em>Figure 55. Expected result.</em></center>
 
-Remember to update the HDL wrapper, as seen in the [Step 5](chapter-1-step-5.md).
+Remember to update the HDL wrapper, as seen in [Step 5](chapter-1-step-5.md).
 
 </div>
 

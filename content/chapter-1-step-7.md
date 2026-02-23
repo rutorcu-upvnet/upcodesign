@@ -12,7 +12,7 @@ title: "1.7 GPIO Options"
 <div class="step active" data-step="1">
 <h2>Create Port for LED</h2>
 
-The name of the ports and direction in the `AXI_GPIO` must match with the constrains file. Delete the `LEDs` port, right click in the `Design` canvas and select `Create Port`.
+The name of the ports and direction in the `AXI_GPIO` must match the constraints file. Delete the `LEDs` port, right-click on the `Design` canvas and select `Create Port`.
 
 ![Creating a port](img/figure_0030.png)
 
@@ -23,7 +23,7 @@ The name of the ports and direction in the `AXI_GPIO` must match with the constr
 <h2>Configure LED Port</h2>
 
 Select the options for LEDs Port:
-- Name it `LED` (as in the constrains file)
+- Name it `LED` (as in the constraints file)
 - Set Direction as `Output`
 - Set Type as `Data`
 - Check Create vector option from `7 to 0`

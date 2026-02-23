@@ -6,13 +6,13 @@ title: "2. BareMetal Software Development for MicroBlaze"
 
 ---
 
-One thing a programmer needs to know is the web pages than can be useful to read, study or copy examples to learn about the AMD products and embedded software applications. The officials from AMD are:
+One thing a programmer needs to know is the web pages that can be useful to read, study or copy examples to learn about the AMD products and embedded software applications. The official resources from AMD are:
 
 `BareMetal`
 
 https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841745/Baremetal+Drivers+and+Libraries
 
-Specific driver for a peripheral implementation the link moves to Xilinx (AMD) github:
+Specific driver for a peripheral implementation, the link redirects to Xilinx (AMD) GitHub:
 
 https://github.com/Xilinx/embeddedsw/tree/master/XilinxProcessorIPLib/drivers
 
@@ -28,11 +28,11 @@ Drivers for Intellectual Properties (IPs)
 
 https://www.xilinx.com/products/intellectual-property.html
 
-In case to look for `GPIO`
+In case you need to look for `GPIO`
 
 https://www.xilinx.com/products/intellectual-property/nav-interface-interconnect/nav-axi-infrastructure.html
 
-Genesys 2 board Examples Projects (Digilent)
+Genesys 2 Board Example Projects (Digilent)
 
 https://digilent.com/reference/programmable-logic/genesys-2/demos/start?srsltid=AfmBOoqlkKBwlWdxqCKJZg7MvGugNzdp79s66YtSQYMNS4Cw4rl9kuL3
 

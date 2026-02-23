@@ -13,7 +13,7 @@ title: "3.1 Exercise 1: Creating a project with Free RTOS"
 
 > [!note] Objectives
 >
-> Create a base project like in [2.1](chapter-2-exercise-2.md) using `Free RTOS` as software platform<br>
+> Create a base project like in [2.1](chapter-2-exercise-2.md) using `Free RTOS` as a software platform<br>
 > Adjust the BSP configuration and select the appropriate timers<br>
 
 This exercise guides you through creating your first `Free RTOS` application on the `MicroBlaze` processor. You will create a Vitis platform based on your Vivado hardware design.
@@ -51,13 +51,13 @@ This exercise guides you through creating your first `Free RTOS` application on 
 
 <center><em>Figure 80. Select the XSA file.</em></center><br>
 
-> [!warning] Select the complete hardware architecture that include `AXI Timers`
+> [!warning] Select the complete hardware architecture that includes `AXI Timers`
 
 </div>
 <div class="step" data-step="5">
 <h2>Configure Operating System</h2>
 
-- Select `Operative System` as `freertos`, select `MicroBlaze` from available processor options and finish the process
+- Select `Operating System` as `freertos`, select `MicroBlaze` from available processor options and finish the process
 
 ![Select Free RTOS](img/figure_0081.png)
 
@@ -67,7 +67,7 @@ This exercise guides you through creating your first `Free RTOS` application on 
 <div class="step" data-step="6">
 <h2>Build the Platform</h2>
 
-- Once the platform configuration is complete, click in `Build` at the `Flow` tab of the main window
+- Once the platform configuration is complete, click on `Build` at the `Flow` tab of the main window
 
 ![Building the platform](img/figure_0082.png)
 
@@ -85,10 +85,10 @@ This exercise guides you through creating your first `Free RTOS` application on 
 
 >[!error] Some parameters have a real interest
 > - Maximum size of stack for the tasks (2048 recommended to start)
-> - Maximum number of priority (select almost 16)
-> - Pre-emption (True in the habitual way to work on RTOS)
-> - Time-slicing (False in the habitual way)
-> - If you have troubles with some inner assertions on the portability of `Free RTOS` on AMD try to select False (only you have experienced issues) in freertos_asserts parameter
+> - Maximum number of priorities (select at least 16)
+> - Pre-emption (True for typical RTOS operation)
+> - Time-slicing (False for typical operation)
+> - If you have trouble with some inner assertions on the portability of `Free RTOS` on AMD try to select False (only if you have experienced issues) in freertos_asserts parameter
 
 </div>
 <div class="step" data-step="8">

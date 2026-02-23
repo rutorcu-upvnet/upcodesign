@@ -17,7 +17,7 @@ title: "3.9 Exercise 9: Use of xQueueReset()"
 > Use `xQueueReset()` to empty a full queue at runtime<br>
 > Add queue overflow protection to the receiving task<br>
 
-Add the condition on the receiving task from the previous example: if the queue is full it should be emptied by using `xQueueReset()`
+Add the condition to the receiving task from the previous example: if the queue is full, it should be emptied by using `xQueueReset()`
 
 > [!warning] Build and test your application
 

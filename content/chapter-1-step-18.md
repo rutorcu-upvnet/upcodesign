@@ -1,5 +1,5 @@
 ---
-title: "1.18 Concatenation of Interruptions and Connections"
+title: "1.18 Concatenation of Interrupts and Connections"
 ---
 
 [Previous: Step 17](chapter-1-step-17.md)
@@ -32,7 +32,7 @@ Edit the Concat module properties with 3 inputs.
 <div class="step" data-step="3">
 <h2>Connect Interrupt Signals</h2>
 
-Connect the output interruption from `AXI Timers` and `BTN` to the Concat inputs. Connect the output from the `Concat` to the input interruption of `AXI Interrupt Controller`. Connect the output of the `AXI Interrupt Controller` to the input interruption bus of the `MicroBlaze` processor.
+Connect the output interrupt from `AXI Timers` and `BTN` to the Concat inputs. Connect the output from the `Concat` to the input interrupt of `AXI Interrupt Controller`. Connect the output of the `AXI Interrupt Controller` to the input interrupt bus of the `MicroBlaze` processor.
 
 ![Interrupt connections](img/figure_0053.png)
 

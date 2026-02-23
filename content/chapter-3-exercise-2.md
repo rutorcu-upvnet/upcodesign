@@ -18,8 +18,8 @@ title: "3.2 Exercise 2: Creating Threads (Tasks)"
 > Start working with `Free RTOS`<br>
 
 Select `File`/`New Component`/`Application` and name your application as
-`freertos_student_test`. Select the platform created on previous exercised as
-platform for the application.
+`freertos_student_test`. Select the platform created in the previous exercise as
+the platform for the application.
 
 Use the following example and verify its functionality, call the file
 `free_rtos_app.c` at `Source`/`src` folder inside the application component.
@@ -78,7 +78,7 @@ void vTask2(void *pvParameters)
 their operation
 - Reassign priorities 3, 4, 5 and 6 to tasks 1, 2, 3 and 4 respectively
 - Modify the period of `Task3` and `Task4` and shows their messages
-- Assign a period of 1.5 seconds to `Task3` and 3 secconds to `Task4`
+- Assign a period of 1.5 seconds to `Task3` and 3 seconds to `Task4`
 
 >[!warning] Build and check your application
 

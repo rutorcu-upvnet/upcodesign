@@ -30,7 +30,7 @@ https://xilinx-wiki.atlassian.net/wiki/spaces/A/overview
 
 ## Exercise 3: [Parameters and TaskControl: Delete Tasks](chapter-3-exercise-3.md)
 
-## Exercise 4: [Use of LEDS. Duration of Tasks](chapter-3-exercise-4.md)
+## Exercise 4: [Use of LEDs. Duration of Tasks](chapter-3-exercise-4.md)
 
 ## Exercise 5: [TaskControl I: Using xTaskDelayUntil()](chapter-3-exercise-5.md)
 

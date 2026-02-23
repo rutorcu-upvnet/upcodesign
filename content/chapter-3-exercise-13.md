@@ -10,15 +10,19 @@ title: "3.13 Exercise 13: Kernel Control"
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Step 1</h2>
+<h2>Kernel Control: Critical Sections</h2>
 
-Exercise 13. Kernel Control
-Work with the use of services to control the kernel before and after a critical section
-on previous examples.
-For instance, use ENTER_CRITICAL and EXIT_CRITICAL to wrap the xil_printf()
-function.
-Also, there are methods to control the critical sections without block the
-interruptions. Give an example of the services in Free RTOS.
+> [!note] Objectives
+>
+> Use kernel services to control critical sections in `FreeRTOS`<br>
+> Protect shared resources using `taskENTER_CRITICAL()` and `taskEXIT_CRITICAL()`<br>
+> Explore alternative methods to control critical sections without blocking interrupts<br>
+
+- Work with the use of services to control the kernel before and after a critical section in previous examples
+
+- For instance, use `taskENTER_CRITICAL()` and `taskEXIT_CRITICAL()` to wrap the `xil_printf()` function
+
+> [!error] There are also methods to control the critical sections without blocking interrupts. Give an example of the services in `FreeRTOS`.
 
 </div>
 

@@ -32,11 +32,11 @@ If the design is correct, you will see a successful validation message. This con
 <div class="step" data-step="3">
 <h2>Create HDL Wrapper</h2>
 
-After the design validation step, we will proceed with creating a HDL System Wrapper. Click on the Sources tab and find your block design. Right click on your block design and click Create HDL Wrapper. Let Vivado manage wrapper and auto-update and click OK.
+After the design validation step, we will proceed with creating an HDL System Wrapper. Click on the Sources tab and find your block design. Right click on your block design and click Create HDL Wrapper. Let Vivado manage wrapper and auto-update and click OK.
 
-![Create a HDL wrapper](img/figure_0028.png)
+![Create an HDL wrapper](img/figure_0028.png)
 
-<center><em>Figure 28. Create a HDL wrapper.</em></center><br>
+<center><em>Figure 28. Create an HDL wrapper.</em></center><br>
 
 This will create a top module in Verilog and will allow you to generate a bitstream.
 </div>

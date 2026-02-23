@@ -38,7 +38,7 @@ Edit the `AXI GPIO` properties as `Custom` and `All inputs` (see Step 7) and che
 
 <center><em>Figure 47. Editing the parameters of AXI GPIO for the pushbuttons.</em></center>
 
-Remember to uncomment the pin names for BTN connection at the constraint file, as seen in the [Step 6](chapter-1-step-6.md).
+Remember to uncomment the pin names for the BTN connection in the constraint file, as seen in [Step 6](chapter-1-step-6.md).
 
 </div>
 

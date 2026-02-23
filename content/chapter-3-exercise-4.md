@@ -1,5 +1,5 @@
 ---
-title: "3.4 Exercise 4: Use of LEDS. Duration of Tasks"
+title: "3.4 Exercise 4: Use of LEDs. Duration of Tasks"
 ---
 
 [Previous: Exercise 3](chapter-3-exercise-3.md)
@@ -49,7 +49,7 @@ void vTask2(void *pvParameters)
 - There is no scheduler running, `main()` runs before the scheduler (`vTaskStartScheduler()`) starts. Some Xilinx functions may depend on interrupts or the state of the operating system to run properly. When you call these functions within `main()`, there is still no proper task context, which can cause them to fail
 - There is no task context, each task has its own stack and execution context. Some Xilinx functions may need access to context variables that are not available if called from `main()` before the scheduler starts
 - Interrupts may not be enabled, some features of Xilinx controllers require interrupts to be turned on. If you call them in `main()` before `Free RTOS` enables interrupts, they may not run correctly
-- System initializer conflicts, `main()` can run in a state where certain peripherals are not yet fully initialized. Instead, when used within a task, the hardware is already configured correctly
+- System initialization conflicts, `main()` can run in a state where certain peripherals are not yet fully initialized. Instead, when used within a task, the hardware is already configured correctly
 
 </div>
 <div class="step" data-step="3">
@@ -122,7 +122,7 @@ TickType_t end = xTaskGetTickCount();
 xil_printf("Duration: %d ticks\n", end - start);
 ```
 
-> [!question] What value in ticks lasted `xil_printf()`?
+> [!question] How many ticks did `xil_printf()` take?
 
 </div>
 

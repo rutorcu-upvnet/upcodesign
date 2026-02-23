@@ -18,15 +18,15 @@ title: "3.10 Exercise 10: Semaphores from ISR and Mutexes"
 > Configure GPIO interrupts for button handling on `MicroBlaze`<br>
 > Implement pushbutton debouncing in the ISR<br>
 
-In this exercise we are going to use a Semaphore shared between an ISR and a task:
+In this exercise, we are going to use a semaphore shared between an ISR and a task:
 - The task reads the value of the button (BTN)
 - The ISR runs when a BTN is pressed
-- The Task tries to take a binary semaphore. If it does not get the semaphore, it is blocked without being able to read the BTN value
-- The ISR returns the semaphore, enabling the Task to display the pressed BTN code
+- The task tries to take a binary semaphore. If it does not get the semaphore, it is blocked without being able to read the BTN value
+- The ISR returns the semaphore, enabling the task to display the pressed BTN code
 
 ![](img/figure_0086.png)
 
-No example of mutex is made, although they are simple to implement seeing the
+No example of a mutex is made, although they are simple to implement seeing the
 use of binary semaphores.
 
 > [!error] Give an example of using `MUTEX`
@@ -35,9 +35,9 @@ use of binary semaphores.
 <div class="step" data-step="2">
 <h2>Includes and libraries</h2>
 
-> [!warning] Comment the previous created tasks or exercises. As alternative you can create a new application on the same Platform.
+> [!warning] Comment out the previously created tasks or exercises. As an alternative, you can create a new application on the same platform.
 
-Include libraries for interrupt management and semaphores in `Free RTOS`:
+Include libraries for interrupt management and semaphores in `FreeRTOS`:
 
 ```c
 #include "xil_exception.h"
@@ -46,7 +46,7 @@ Include libraries for interrupt management and semaphores in `Free RTOS`:
 #include "portmacro.h"
 ```
 
-> [!info] Don't forget maintaining previous created libraries
+> [!info] Don't forget to include the previously used libraries
 
 ```c
 #include <FreeRTOS.h>
@@ -90,7 +90,7 @@ XGpio Gpio_btn; /* The instance of the GPIO Driver for key buttons */
 <div class="step" data-step="4">
 <h2>Task Parameters, GPIO Init and Interrupt Setup</h2>
 
-> [!info] `BTN_CHANNEL` is the channel associated with GPIO AXI module.
+> [!info] `BTN_CHANNEL` is the channel associated with the GPIO AXI module.
 
 Task parameters and prototype function for the task that will wait for the semaphore:
 
@@ -100,7 +100,7 @@ TaskParameters_t taskSemParams = {"Task Sem", pdMS_TO_TICKS(1000), "Task Sem is 
 TaskHandle_t xTaskSemHandle = NULL;
 ```
 
-- On the `vTaskStartUp` task, include the GPIO button initialization:
+- In the `vTaskStartUp` task, include the GPIO button initialization:
 
 ```c
 /* gpio btn initialization */
@@ -134,7 +134,7 @@ if (Status != XST_SUCCESS) {
     return XST_FAILURE;
 }
 
-/* Enable MicroBlaze global interruptions */
+/* Enable MicroBlaze global interrupts */
 Xil_ExceptionEnable();
 
 xLastISRTime = 0;
@@ -144,10 +144,10 @@ xISRTime = 0;
 > [!info] The previous code represents:
 > - Initialization of BTN (`XGpio_Initialize`) connecting `Gpio_btn` with the memory address of the AXI GPIO
 > - The direction of the 5 BTN (`0x1F`) as inputs using `XGpio_SetDataDirection()`
-> - Enable the BTN GPIO as hardware interruptions: `XGpio_InterruptEnable()` and `XGpio_InterruptGlobalEnable()`
-> - Initialization of interruptions from BTN: `XGpio_LookupConfig()` and `XSetupInterruptSystem()`
-> - Enabling the interruptions of BTN by writing corresponding bits on the GPIO Interrupt Enable Register (IER) and the GPIO Global Interrupt Enable Register (GIE)
-> - Enabling MicroBlaze Global Interruptions. `Xil_ExceptionEnable()` must be called after all the interruptions have been enabled
+> - Enable the BTN GPIO as hardware interrupts: `XGpio_InterruptEnable()` and `XGpio_InterruptGlobalEnable()`
+> - Initialization of interrupts from BTN: `XGpio_LookupConfig()` and `XSetupInterruptSystem()`
+> - Enabling the interrupts of BTN by writing corresponding bits on the GPIO Interrupt Enable Register (IER) and the GPIO Global Interrupt Enable Register (GIE)
+> - Enabling MicroBlaze Global Interrupts. `Xil_ExceptionEnable()` must be called after all the interrupts have been enabled
 
 </div>
 <div class="step" data-step="5">
@@ -169,13 +169,14 @@ else
 ```
 
 > [!info] The previous code represents:
-> - Creation of Semaphore `xCountingSemaphore` with value 1. When a task or ISR takes it the value goes to 0, when released the value returns to 1
+> - Creation of Semaphore `xCountingSemaphore` with value 1. When a task or ISR takes it, the value goes to 0
+> - When released, the value returns to 1
 
 </div>
 <div class="step" data-step="6">
 <h2>GPIO interrupt handler</h2>
 
-Create the GPIO handler routine for the interruption at the end of the entire project. It represents the ISR routine for the GPIO:
+Create the GPIO handler routine for the interrupt at the end of the entire project. It represents the ISR routine for the GPIO:
 
 ```c
 /******************************************************************************/
@@ -234,15 +235,15 @@ void GpioHandler(void *CallbackRef)
 ```
 
 > [!info] The previous code represents:
-> An ISR first disable the interruption, second clear the interruption, third process the interruption and finally enable the interruption again. <br>
-> The process of the interruption gives the semaphore and activates the variable xHigherPriorityTaskWoken (pdTRUE). Also contains a debouncing protection for the BTNs of the Genesys2 board. By test the value has been selected as 20 ticks.<br>
+> An ISR first disables the interrupt, then clears the interrupt, processes the interrupt, and finally enables the interrupt again. <br>
+> The interrupt handler gives the semaphore and activates the variable xHigherPriorityTaskWoken (pdTRUE). It also contains debouncing protection for the BTNs of the Genesys2 board. Through testing, the value has been selected as 20 ticks.<br>
 > Switch Context. Activation of the blocked task with higher priority.
 
 </div>
 <div class="step" data-step="7">
 <h2>Creation of the Task</h2>
 
-Creation of the Task that waits for the semaphore.
+Creation of the task that waits for the semaphore.
 
 ```c
 /* Task waiting for the semaphore and printing the button pressed */
@@ -266,7 +267,7 @@ void vTaskSemaphore(void *pvParameters)
 }
 ```
 
-When the task takes the semaphore then prints out the value of the BTN pressed. As the interruption is faster than our finger push and release, the BTN could be read in the task better than the ISR.
+When the task takes the semaphore, it then prints out the value of the BTN pressed. As the interrupt is faster than our finger press and release, the BTN could be read in the task better than the ISR.
 
 </div>
 

@@ -68,17 +68,17 @@ If you modify the architecture in Vivado, you can update the XSA file without lo
 <div class="step" data-step="5">
 <h2>Configure Operating System</h2>
 
-Select `Operative System` as `Stand Alone`, select `MicroBlaze` from available processor options and finish the process
+Select `Operating System` as `Stand Alone`, select `MicroBlaze` from available processor options and finish the process
 
-![Select no Operative System](img/figure_0059.png)
+![Select no Operating System](img/figure_0059.png)
 
-<center><em>Figure 59. Select no Operative System.</em></center><br>
+<center><em>Figure 59. Select no Operating System.</em></center><br>
 
 </div>
 <div class="step" data-step="6">
 <h2>Build the Platform</h2>
 
-Once the platform configuration is complete, click in `Build` at the `Flow` tab of the main window. The build process creates the BSP (Board Support Package) with drivers connecting peripherals to MicroBlaze
+Once the platform configuration is complete, click on `Build` at the `Flow` tab of the main window. The build process creates the BSP (Board Support Package) with drivers connecting peripherals to MicroBlaze
 
 ![Building the platform](img/figure_0060.png)
 
@@ -128,7 +128,7 @@ Once the platform is created, you can now develop applications. Open Vitis envir
 <div class="step" data-step="11">
 <h2>Select Hello World Application</h2>
 
-> [!warning] The starting point consider that you have already created a `Platform`
+> [!warning] The starting point assumes that you have already created a `Platform`
 
 Select `Hello World` application and `Create Application Component from Template`
 
@@ -168,14 +168,14 @@ Once the application has been created, you can explore the application folder an
 
 > [!info] Key Settings Options
 >
-> - You can change the XSA file by selecting the Switch Platform (this is used to update hardware  modifications on Vivado)<br>
-> - Platform Information allows to verify hardware structure<br>
+> - You can change the XSA file by selecting the Switch Platform (this is used to update hardware modifications in Vivado)<br>
+> - Platform Information allows you to verify hardware structure<br>
 
 </div>
 <div class="step" data-step="15">
 <h2>Configure Compiler Settings</h2>
 
-Check the `Compiler Setting` where you can select diƯerent compiler optimization methods
+Check the `Compiler Setting` where you can select different compiler optimization methods
 
 ![Compiler optimization settings](img/figure_0069.png)
 
@@ -244,11 +244,11 @@ Once successful, the executable is ready for programming
 
 To run your application select `Debug` from the `Flow` tab. That should download the bitstream and the application to the board. 
 
-Open a terminal emulator connected to the UART ((configure the serial port according with the AXI_UART defined in the architecture) and run the program from the debug console. You should see "Hello MicroBlaze!" printed to the console.
+Open a terminal emulator connected to the UART (configure the serial port according to the AXI_UART defined in the architecture) and run the program from the debug console. You should see "Hello MicroBlaze!" printed to the console.
 
 You can use StepOver to debug each code line. You can insert Breakpoints as usual in a debugger environment.
 
-![BuDebugild application](img/figure_0072.png)
+![Debug application](img/figure_0072.png)
 
 <center><em>Figure 72. Debug application.</em></center><br>
 
@@ -258,7 +258,7 @@ Your first BareMetal application is now running on the MicroBlaze processor!
 <div class="step" data-step="20">
 <h2>Configure Debug</h2>
 
-Select the configuration wheel settings to shows the options in the debugger session. If the FPGA was already programmed, you can unselect the `Program Device` option. The `Reset Entire System` is recommended to initialize the running of MicroBlaze.
+Select the configuration wheel settings to show the options in the debugger session. If the FPGA was already programmed, you can unselect the `Program Device` option. The `Reset Entire System` is recommended to initialize the running of MicroBlaze.
 
 ![Debug application options](img/figure_0073.png)
 
@@ -305,15 +305,15 @@ When working with a UART on a MicroBlaze system, there are key differences betwe
 
 1. Dependency on Standard Library
 printf(): Part of the C standard library (newlib), which supports advanced format conversions but can increase code size and execution time in embedded systems like MicroBlaze.
-xil_printf(): A lightweight function provided by Xilinx, optimized for embedded systems. It does not depend on newlib, making it more eƯicient in terms of memory and performance.
+xil_printf(): A lightweight function provided by Xilinx, optimized for embedded systems. It does not depend on newlib, making it more efficient in terms of memory and performance.
 
 2. Format Handling
 printf(): Supports all standard C format specifiers, such as %f (floating point), %x (hexadecimal), %o (octal), etc.
-xil_printf(): Does not support floating point (%f), making it more eƯicient for resource-constrained systems.
+xil_printf(): Does not support floating point (%f), making it more efficient for resource-constrained systems.
 
 3. Code Size
 printf(): Can significantly increase the compiled code size due to the inclusion of newlib functions, which may be problematic in memory-limited systems.
-xil_printf(): Much more compact and eƯicient in terms of memory usage because it is optimized for Xilinx hardware.
+xil_printf(): Much more compact and efficient in terms of memory usage because it is optimized for Xilinx hardware.
 
 4. UART Output
 printf(): Requires stdout to be redirected to UART, which may need additional configuration. 
@@ -324,7 +324,7 @@ xil_printf(): Already optimized to send data directly to UART in Xilinx embedded
 - If you need advanced formatting (such as floating point support), use printf(), but be aware of the higher resource consumption
 - In MicroBlaze-based embedded systems, xil_printf() is generally recommended unless you specifically require the advanced formatting features of printf()
 
-[!attention] If `VIVADO` JTAG is still connected to the board as Target Connected some issues could appear if `VITIS` try to program the board. You must select one of the two options: `VITIS` or `VIVADO` to program your FPGA. If you will program without modify your architecture better to program from `VITIS` so disconnect previously the Hardware Platform from Vivado
+[!attention] If `VIVADO` JTAG is still connected to the board as Target Connected some issues could appear if `VITIS` tries to program the board. You must select one of the two options: `VITIS` or `VIVADO` to program your FPGA. If you will program without modifying your architecture, it is better to program from `VITIS`, so previously disconnect the Hardware Platform from Vivado
 
 </div>
 <div class="navigation">

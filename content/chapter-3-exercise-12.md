@@ -14,14 +14,14 @@ title: "3.12 Exercise 12: Software Timers"
 
 > [!note] Objectives
 >
-> Create and use software timers in `Free RTOS`<br>
+> Create and use software timers in `FreeRTOS`<br>
 > Control timer period and state from an ISR<br>
 > Implement a LED toggle callback using `xTimerCreate()`<br>
 
-A `Free RTOS` software timer is created to toggle LED 0 every second. The BTN controls the timer:
+A `FreeRTOS` software timer is created to toggle LED 0 every second. The BTN controls the timer:
 - BTN 1 (CENTER) Toggle every 2 sec
 - BTN 2 (DOWN) Restart Timer running at 1 sec
-- BTN 4 (LEFT) Stop the timer and switch off the led
+- BTN 4 (LEFT) Stop the timer and switch off the LED
 - BTN 8 (RIGHT) Toggle every 0.5 sec
 - BTN 16 (UP) Toggle every 1 sec
 

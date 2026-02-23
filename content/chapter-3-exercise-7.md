@@ -29,7 +29,7 @@ void vReceiverTask( void *pvParameters );
 <div class="step" data-step="2">
 <h2>Queue parameters</h2>
 
-Add a new struct with values needed by the sender and receive tasks
+Add a new struct with values needed by the sender and receiver tasks
 ```c
 // Structure for the sender and receiver example
 typedef struct {
@@ -39,7 +39,7 @@ typedef struct {
 	int32_t lValue;
 } TaskQueueParameters;
 ```
-Generate variables for two senders (producers) and one receiver (consumer). One sender sends number 100 at the beginning and then increments this value in each iteration. Second sender start sending the value 200. All tasks have the same period of 1sec.
+Generate variables for two senders (producers) and one receiver (consumer). One sender sends number 100 at the beginning and then increments this value in each iteration. The second sender starts sending the value 200. All tasks have the same period of 1sec.
 
 ```c
 TaskQueueParameters sender1Params = {"Sender 1",pdMS_TO_TICKS(1000), "Sender 1 is running", 100};

@@ -17,19 +17,19 @@ title: "2.5 Exercise 5: Managing the AXI Timer (Polling)"
 > Initialize and configure timers using polling mode<br>
 > Use timers for precise timing control in `BareMetal` applications<br>
 
-One of the basic peripherals in every microcontroller architecture is the timer. The Vivado architecture created includes two `AXI Timers` that will be managed in this section. `AXI Timer 0` and `AXI Timer 1` will be used as sleep and tick timer respectively. The inner characteristics of each `AXI Timer` let to create up to 2 timers (counters) in the same `AXI Timer` architectural block by using counters of 32 bits instead one of 64 bits. That was configured in Chapter 1.
+One of the basic peripherals in every microcontroller architecture is the timer. The Vivado architecture created includes two `AXI Timers` that will be managed in this section. `AXI Timer 0` and `AXI Timer 1` will be used as sleep and tick timer respectively. The inner characteristics of each `AXI Timer` allow you to create up to 2 timers (counters) in the same `AXI Timer` architectural block by using counters of 32 bits instead of one of 64 bits. That was configured in Chapter 1.
 
 ![AXI Timer configuration](img/figure_0076.png)
 
 <center><em>Figure 76. AXI Timer hardware configuration.</em></center><br>
 
->[!warning] Clicking `Documentation` option in hardware properties at Vivado IDE is an easy method to locate information and datasheets of the peripheral
+>[!warning] Clicking the `Documentation` option in hardware properties in the Vivado IDE is an easy method to locate information and datasheets of the peripheral
 
 </div>
 <div class="step" data-step="2">
 <h2>Check Timer Settings</h2>
 
-Go to the `Platform` configuration, select `xiltimer` configuration and confirm that `AXI Timer 0` is selected as sleep_timer thus sleep() library and function will use it. `AXI Timer 1` should be selected as tick timer, managing the functionality of a classical microcontroller peripheral timer (getting the current time by polling or interruptions).
+Go to the `Platform` configuration, select `xiltimer` configuration and confirm that `AXI Timer 0` is selected as sleep_timer so the sleep() library and function will use it. `AXI Timer 1` should be selected as tick timer, managing the functionality of a classical microcontroller peripheral timer (getting the current time by polling or interrupts).
 
 ![Timer configuration](img/figure_0077.png)
 

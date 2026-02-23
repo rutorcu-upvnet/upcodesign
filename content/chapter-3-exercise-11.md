@@ -14,11 +14,11 @@ title: "3.11 Exercise 11: Event Groups or Flags"
 
 > [!note] Objectives
 >
-> Use Event Groups (Flags) in `Free RTOS` to synchronize button presses<br>
+> Use Event Groups (Flags) in `FreeRTOS` to synchronize button presses<br>
 > Set event bits from an ISR using `xEventGroupSetBitsFromISR()`<br>
 > Wait for multiple events using `xEventGroupWaitBits()`<br>
 
-This time we create an example of use of Flag Groups in `Free RTOS` by including some code lines in the previous ISR semaphore example.
+This time we create an example of use of Flag Groups in `FreeRTOS` by including some code lines in the previous ISR semaphore example.
 
 When the user presses all 5 buttons, a message will appear indicating that the event group has been used. Meanwhile, if all 5 buttons have not been pressed yet, another message will be displayed.
 
