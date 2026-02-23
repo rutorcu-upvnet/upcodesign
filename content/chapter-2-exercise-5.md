@@ -133,7 +133,7 @@ if (Status != XST_SUCCESS) {
 Configure the timer with autoreload and down-counting, self test it and then start it:
 
 ```c
-int TimerInit(UINTPTR BaseAddr, u8 TmrCtrNumber, XTmrCtr TimerCounter)
+int TimerInit(UINTPTR BaseAddr, u8 TmrCtrNumber, XTmrCtr *TimerCounter)
 {
     int Status;
     XTmrCtr *TmrCtrInstancePtr = TimerCounter;

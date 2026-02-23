@@ -10,12 +10,16 @@ title: "3.9 Exercise 9: Use of xQueueReset()"
 <div class="step-container">
 
 <div class="step active" data-step="1">
-<h2>Step 1</h2>
+<h2>Using xQueueReset()</h2>
 
-Exercise 9. Use of xQueueReset().
-Add the condition on the receiving task from the previous example, if the queue is
-full it should be emptied by using xQueueReset().
-@Marcos Martínez Peiró, Feb 25. Pag 82
+> [!note] Objectives
+>
+> Use `xQueueReset()` to empty a full queue at runtime<br>
+> Add queue overflow protection to the receiving task<br>
+
+Add the condition on the receiving task from the previous example: if the queue is full it should be emptied by using `xQueueReset()`
+
+> [!warning] Build and test your application
 
 </div>
 
