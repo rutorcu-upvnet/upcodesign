@@ -77,6 +77,7 @@ title: "Firmware Development in Embedded Systems"
 - Exercise 4: [Knight Rider Lights](chapter-5-exercise-4.md)
 - Exercise 5: [TCP Socket and Debugging](chapter-5-exercise-5.md)
 - Exercise 6: [Add Your App to a Production Image](chapter-5-exercise-6.md)
+- Extra: [Vitis Unified Instructions for Hello World in Linux](chapter-5-extra-vitis-unified.md)
 
 Feel free to navigate through the sessions to learn more about building and working with Petalinux systems.
 
