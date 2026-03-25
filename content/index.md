@@ -2,9 +2,10 @@
 title: "Firmware Development in Embedded Systems"
 ---
 
-**Author:** Marcos Martínez Peiró (mpeiro@eln.upv.es)  
-**Author:** Ruben Torres Curado (rutorcu@upvnet.upv.es)  
-**Date:** February 2026  
+**Author:** Marcos Martínez Peiró (mpeiro@eln.upv.es)
+**Author:** Alejandro Gómez Gambín (algogam@upvnet.upv.es)
+**Author:** Ruben Torres Curado (rutorcu@upvnet.upv.es)
+**Date:** March 2026  
 **Institution:** Universitat Politècnica de València
 
 ## Contents
