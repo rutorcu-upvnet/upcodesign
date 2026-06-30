@@ -2,9 +2,10 @@
 title: "Firmware Development in Embedded Systems"
 ---
 
-**Author:** Marcos Martínez Peiró (mpeiro@eln.upv.es)  
-**Author:** Ruben Torres Curado (rutorcu@upvnet.upv.es)  
-**Date:** February 2026  
+**Author:** Marcos Martínez Peiró (mpeiro@eln.upv.es)
+**Author:** Alejandro Gómez Gambín (algogam@upvnet.upv.es)
+**Author:** Ruben Torres Curado (rutorcu@upvnet.upv.es)
+**Date:** March 2026  
 **Institution:** Universitat Politècnica de València
 
 ## Contents
@@ -64,6 +65,22 @@ title: "Firmware Development in Embedded Systems"
 - Exercise 14: [Task Notifications](chapter-3-exercise-14.md)
 - Exercise 15: [Stream Buffers](chapter-3-exercise-15.md)
 - Exercise 16: [Message Buffers](chapter-3-exercise-16.md)
+
+### [Chapter 4: Building Petalinux on AMD Kintex7 FPGA](chapter-4-building-petalinux.md)
+
+- Exercise 1: [Creating a Linux-compatible system in Vivado](chapter-4-vivado-microblaze.md)
+- Exercise 2: [Petalinux Tools: Building a linux image for Microblaze Soft Core](chapter-4-petalinux-boot.md)
+
+### [Chapter 5: Coding applications for Petalinux using Vitis](chapter-5-vitis-applications.md)
+- Exercise 1: [Patching the Bootloader](chapter-5-exercise-1.md)
+- Exercise 2: [Vitis Linux Platform and Hello World](chapter-5-exercise-2.md)
+- Exercise 3: [GPIO Sysfs Management](chapter-5-exercise-3.md)
+- Exercise 4: [Knight Rider Lights](chapter-5-exercise-4.md)
+- Exercise 5: [TCP Socket and Debugging](chapter-5-exercise-5.md)
+- Exercise 6: [Add Your App to a Production Image](chapter-5-exercise-6.md)
+- Extra: [Vitis Unified Instructions for Hello World in Linux](chapter-5-extra-vitis-unified.md)
+
+Feel free to navigate through the sessions to learn more about building and working with Petalinux systems.
 
 ### [Annex](annex.md)
 
